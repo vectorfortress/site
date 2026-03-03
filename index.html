@@ -8,221 +8,130 @@
 
   <style>
     :root{
-      --bg: #0b1220;
-      --panel: rgba(15,26,48,.62);
-      --panel2: rgba(15,26,48,.78);
-      --text: #e7edf7;
-      --muted: #b8c6dc;
+      --bg: #0b1220;          /* deep navy */
+      --panel: #0f1a30;       /* slightly lighter navy */
+      --text: #e7edf7;        /* soft white */
+      --muted: #b8c6dc;       /* muted blue-gray */
       --border: rgba(231,237,247,.14);
-      --border2: rgba(231,237,247,.20);
-      --accent: #7dd3fc;
-      --accent2:#a78bfa;
-
-      --max: 1040px;
-      --radius: 18px;
-      --shadow: 0 18px 55px rgba(0,0,0,.38);
-      --shadow2: 0 10px 35px rgba(0,0,0,.28);
-
-      --focus: 0 0 0 3px rgba(125,211,252,.22);
+      --accent: #7dd3fc;      /* light sky */
+      --accent2:#a78bfa;      /* soft violet */
+      --max: 980px;
+      --radius: 16px;
+      --shadow: 0 16px 50px rgba(0,0,0,.35);
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{ box-sizing: border-box; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.65;
+      line-height:1.6;
       color: var(--text);
-      background:
-        radial-gradient(1200px 700px at 12% 8%, rgba(125,211,252,.18), transparent 55%),
-        radial-gradient(900px 600px at 82% 18%, rgba(167,139,250,.17), transparent 55%),
-        radial-gradient(900px 700px at 50% 110%, rgba(125,211,252,.11), transparent 60%),
-        var(--bg);
+      background: radial-gradient(1200px 700px at 15% 10%, rgba(125,211,252,.18), transparent 55%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(167,139,250,.16), transparent 55%),
+                  radial-gradient(800px 600px at 50% 100%, rgba(125,211,252,.10), transparent 60%),
+                  var(--bg);
     }
 
-    a{ color: var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
 
-    /* Layout */
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 18px 18px 64px;
+      padding: 28px 18px 56px;
     }
 
-    /* Top nav */
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      padding: 12px 0;
-      background: linear-gradient(to bottom, rgba(11,18,32,.92), rgba(11,18,32,.55));
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(231,237,247,.08);
-    }
-    .topbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      min-width: 200px;
-    }
-    .logo{
-      width: 36px; height: 36px;
-      border-radius: 12px;
-      display:grid;
-      place-items:center;
-      border: 1px solid rgba(125,211,252,.35);
-      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.16));
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-    }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brand-title strong{
-      font-size: .98rem;
-      letter-spacing:.2px;
-    }
-    .brand-title span{
-      color: var(--muted);
-      font-size: .82rem;
-      margin-top: 2px;
-    }
-
-    nav{
-      display:none;
-      gap: 12px;
-      align-items:center;
-      justify-content:flex-end;
-      flex: 1;
-    }
-    nav a{
-      color: var(--muted);
-      font-weight: 650;
-      font-size: .92rem;
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      text-decoration:none;
-    }
-    nav a:hover{
-      color: var(--text);
-      border-color: rgba(231,237,247,.14);
-      background: rgba(231,237,247,.04);
-      text-decoration:none;
-    }
-
-    @media (min-width: 860px){
-      nav{ display:flex; }
-    }
-
-    /* Hero */
     header{
-      padding: 26px 0 10px;
+      padding: 22px 0 8px;
     }
-    .hero{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 10px;
-    }
-    @media (min-width: 920px){
-      .hero{ grid-template-columns: 1.35fr .65fr; align-items:stretch; }
-    }
-
-    .hero-card{
-      border: 1px solid rgba(231,237,247,.14);
-      border-radius: 22px;
-      background: rgba(15,26,48,.55);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      padding: 20px 18px 18px;
-      overflow:hidden;
-      position: relative;
-    }
-    .hero-card:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(800px 220px at 20% 0%, rgba(125,211,252,.18), transparent 60%),
-                  radial-gradient(900px 260px at 90% 0%, rgba(167,139,250,.16), transparent 65%);
-      pointer-events:none;
-      opacity:.9;
-    }
-    .hero-card > *{ position:relative; }
 
     .badge{
       display:inline-flex;
       align-items:center;
       gap:10px;
       padding: 10px 14px;
-      border: 1px solid rgba(231,237,247,.14);
+      border: 1px solid var(--border);
       border-radius: 999px;
-      background: rgba(15,26,48,.60);
+      background: rgba(15,26,48,.55);
       backdrop-filter: blur(6px);
-      box-shadow: var(--shadow2);
-      font-weight: 750;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      font-weight: 700;
       letter-spacing: .2px;
-    }
-    .badge .dot{
-      width:10px; height:10px;
-      border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 3px rgba(125,211,252,.18);
     }
 
     h1{
-      margin: 14px 0 10px;
-      font-size: clamp(1.95rem, 2.7vw, 2.6rem);
-      line-height: 1.12;
-      letter-spacing: .2px;
-    }
-    .subhead{
-      margin: 0 0 14px;
-      font-size: 1.06rem;
-      color: var(--muted);
-      max-width: 72ch;
+      margin: 14px 0 6px;
+      font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+      line-height: 1.15;
     }
 
-    .hero-metrics{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .metric{
-      border: 1px solid rgba(231,237,247,.12);
-      background: rgba(15,26,48,.52);
-      border-radius: 16px;
-      padding: 12px 12px 11px;
-    }
-    .metric strong{
-      display:block;
-      font-size: .95rem;
-      letter-spacing:.2px;
-    }
-    .metric span{
-      display:block;
+    .subhead{
+      margin: 0 0 16px;
+      font-size: 1.05rem;
       color: var(--muted);
-      font-size: .88rem;
-      margin-top: 2px;
+      max-width: 70ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 860px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+      .span-2{ grid-column: span 2; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(15,26,48,.60);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: .2px;
+    }
+
+    p{ margin: 0 0 12px; color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    ul{
+      margin: 10px 0 12px 20px;
+      padding: 0;
+      color: var(--text);
+    }
+    li{ margin: 6px 0; }
+
+    .kicker{
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: -4px;
+    }
+
+    .callout{
+      border: 1px solid rgba(125,211,252,.25);
+      background: linear-gradient(135deg, rgba(125,211,252,.12), rgba(167,139,250,.08));
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+    }
+
+    .callout h3{
+      margin: 0 0 8px;
+      font-size: 1.05rem;
     }
 
     .cta-row{
       display:flex;
-      flex-wrap:wrap;
+      flex-wrap: wrap;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 10px;
       align-items:center;
     }
 
@@ -230,126 +139,22 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 14px;
+      padding: 10px 14px;
+      border-radius: 12px;
       border: 1px solid rgba(231,237,247,.20);
       background: rgba(231,237,247,.06);
       color: var(--text);
-      font-weight: 750;
+      font-weight: 700;
       text-decoration:none;
-      cursor:pointer;
-      transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
-      user-select:none;
-      white-space:nowrap;
+      cursor: pointer;
     }
-    .btn:hover{ filter: brightness(1.08); transform: translateY(-1px); text-decoration:none; }
-    .btn:active{ transform: translateY(0px); }
-
     .btn.primary{
       border-color: rgba(125,211,252,.45);
-      background: linear-gradient(135deg, rgba(125,211,252,.20), rgba(167,139,250,.14));
+      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.14));
     }
-    .btn.ghost{
-      background: transparent;
-      border-color: rgba(231,237,247,.18);
-    }
+    .btn:hover{ filter: brightness(1.08); text-decoration:none; }
 
-    .fineprint{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    /* Right-side hero panel */
-    .hero-side{
-      border: 1px solid rgba(231,237,247,.14);
-      border-radius: 22px;
-      background: rgba(15,26,48,.62);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow2);
-      padding: 18px;
-    }
-    .hero-side h2{
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-      letter-spacing:.2px;
-    }
-    .pill{
-      display:inline-flex;
-      gap: 8px;
-      align-items:center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(231,237,247,.12);
-      background: rgba(231,237,247,.04);
-      color: var(--muted);
-      font-size: .9rem;
-      margin: 6px 6px 0 0;
-    }
-
-    /* Sections grid */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 16px;
-    }
-    @media (min-width: 920px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-      .span-2{ grid-column: span 2; }
-    }
-
-    .card{
-      border: 1px solid rgba(231,237,247,.14);
-      border-radius: var(--radius);
-      background: var(--panel);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow2);
-      padding: 18px 18px 16px;
-      transition: transform .14s ease, border-color .14s ease, background .14s ease;
-    }
-    .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(125,211,252,.20);
-      background: rgba(15,26,48,.70);
-    }
-
-    h2{
-      margin: 0 0 10px;
-      font-size: 1.12rem;
-      letter-spacing: .2px;
-    }
-    p{ margin: 0 0 12px; color: var(--text); }
-    .muted{ color: var(--muted); }
-
-    ul{
-      margin: 10px 0 12px 18px;
-      padding: 0;
-      color: var(--text);
-    }
-    li{ margin: 7px 0; }
-    li::marker{ color: rgba(125,211,252,.65); }
-
-    .kicker{
-      font-size: .92rem;
-      color: var(--muted);
-      margin-top: -4px;
-    }
-
-    .callout{
-      border: 1px solid rgba(125,211,252,.25);
-      background: linear-gradient(135deg, rgba(125,211,252,.12), rgba(167,139,250,.09));
-      border-radius: var(--radius);
-      padding: 16px 16px 14px;
-    }
-    .callout h3{
-      margin: 0 0 8px;
-      font-size: 1.03rem;
-      letter-spacing:.15px;
-    }
-
-    /* Contact */
+    /* Forms */
     form{
       margin-top: 12px;
       display:flex;
@@ -363,21 +168,14 @@
       margin-bottom: 6px;
     }
     input, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(231,237,247,.14);
-      background: rgba(15,26,48,.82);
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(15,26,48,.80);
       color: var(--text);
       font-size: 14px;
       outline: none;
-      transition: box-shadow .12s ease, border-color .12s ease, filter .12s ease;
-    }
-    input::placeholder, textarea::placeholder{ color: rgba(184,198,220,.75); }
-    input:focus, textarea:focus{
-      border-color: rgba(125,211,252,.45);
-      box-shadow: var(--focus);
-      filter: brightness(1.03);
     }
     textarea{ resize: vertical; min-height: 120px; }
 
@@ -386,123 +184,37 @@
       grid-template-columns: 1fr;
       gap: 10px;
     }
-    @media (min-width: 920px){
+    @media (min-width: 860px){
       .form-row{ grid-template-columns: 1fr 1fr; }
     }
 
-    /* Utilities */
-    .wrap-anywhere{ overflow-wrap:anywhere; word-break:break-word; }
+    /* Optional: improve long URLs wrapping */
+    .wrap-anywhere{ overflow-wrap: anywhere; word-break: break-word; }
 
-    /* Footer */
     footer{
       margin-top: 18px;
       padding-top: 16px;
-      border-top: 1px solid rgba(231,237,247,.12);
+      border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: .92rem;
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-
-    /* Small entrance animation */
-    @media (prefers-reduced-motion: no-preference){
-      .reveal{
-        animation: rise .45s ease both;
-      }
-      .delay-1{ animation-delay: .06s; }
-      .delay-2{ animation-delay: .12s; }
-      .delay-3{ animation-delay: .18s; }
-      @keyframes rise{
-        from{ opacity:0; transform: translateY(10px); }
-        to{ opacity:1; transform: translateY(0); }
-      }
+      font-size: .9rem;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Sticky Top Bar -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">🛡️</div>
-        <div class="brand-title">
-          <strong>VectorFortress</strong>
-          <span>Federal authorization strategy</span>
-        </div>
-      </div>
-
-      <nav aria-label="Primary">
-        <a href="#problem">Problem</a>
-        <a href="#what-we-do">What we do</a>
-        <a href="#signature">Engagement</a>
-        <a href="#about">Founder</a>
-        <a class="btn primary" href="#contact">Request a call</a>
-      </nav>
-    </div>
-  </div>
-
   <div class="wrap">
     <header>
-      <div class="hero">
-        <section class="hero-card reveal">
-          <div class="badge"><span class="dot"></span> VectorFortress</div>
-          <h1>Federal Cloud Security &amp; Authorization Strategy</h1>
-          <p class="subhead">
-            We help GovTech companies and federal contractors design clear, modern authorization strategies
-            for cloud-native systems — without unnecessary compliance friction.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">Request a Strategy Call →</a>
-            <a class="btn ghost" href="#signature">View Signature Engagement</a>
-          </div>
-          <p class="fineprint">Practical strategy, executive clarity, and engineering-aligned security design.</p>
-
-          <div class="hero-metrics">
-            <div class="metric">
-              <strong>Faster readiness</strong>
-              <span>Reduce uncertainty and rework</span>
-            </div>
-            <div class="metric">
-              <strong>Cleaner SSP structure</strong>
-              <span>Modern, readable, defensible</span>
-            </div>
-            <div class="metric">
-              <strong>NIST-aligned</strong>
-              <span>800-53 &amp; federal expectations</span>
-            </div>
-            <div class="metric">
-              <strong>Leadership-ready</strong>
-              <span>Clear decisions &amp; tradeoffs</span>
-            </div>
-          </div>
-        </section>
-
-        <aside class="hero-side reveal delay-1">
-          <h2>Best for teams who need:</h2>
-          <div class="pill">Authorization strategy</div>
-          <div class="pill">SSP architecture</div>
-          <div class="pill">Control alignment</div>
-          <div class="pill">Governance modernization</div>
-          <div class="pill">Executive roadmap</div>
-
-          <hr style="border:none;border-top:1px solid rgba(231,237,247,.12);margin:14px 0;">
-
-          <p class="muted" style="margin:0;">
-            Outcome: a structured path to authorization readiness that matches modern cloud engineering realities.
-          </p>
-        </aside>
-      </div>
+      <div class="badge">🛡️ VectorFortress</div>
+      <h1>Federal Cloud Security &amp; Authorization Strategy</h1>
+      <p class="subhead">
+        We help GovTech companies and federal contractors design clear, modern authorization strategies
+        for cloud-native systems — without unnecessary compliance friction.
+      </p>
     </header>
 
     <div class="grid">
 
-      <section class="card reveal delay-1" id="problem">
+      <section class="card" id="problem">
         <h2>Federal Security Is Not Just Documentation</h2>
         <p class="muted">Many federal SaaS platforms struggle with:</p>
         <ul>
@@ -516,7 +228,7 @@
         </p>
       </section>
 
-      <section class="card reveal delay-2" id="what-we-do">
+      <section class="card" id="what-we-do">
         <h2>What We Do</h2>
         <p class="muted">VectorFortress provides executive-level advisory focused on:</p>
         <ul>
@@ -531,7 +243,7 @@
         </p>
       </section>
 
-      <section class="card reveal delay-2" id="who-we-advise">
+      <section class="card" id="who-we-advise">
         <h2>Who We Advise</h2>
         <ul>
           <li>GovTech startups entering federal markets</li>
@@ -541,7 +253,7 @@
         </ul>
       </section>
 
-      <section class="card reveal delay-3" id="signature">
+      <section class="card" id="signature">
         <h2>Signature Engagement</h2>
         <div class="callout">
           <h3>Federal Authorization Strategy Diagnostic</h3>
@@ -556,7 +268,7 @@
         </div>
       </section>
 
-      <section class="card span-2 reveal delay-2" id="about">
+      <section class="card span-2" id="about">
         <h2>About the Founder</h2>
         <p>
           Kudeha Atila is a federal technology executive with over 15 years of IT leadership experience and
@@ -597,7 +309,7 @@
         </p>
       </section>
 
-      <section class="card reveal delay-2" id="philosophy">
+      <section class="card" id="philosophy">
         <h2>Our Philosophy</h2>
         <p class="muted">Federal security should be:</p>
         <ul>
@@ -609,7 +321,7 @@
         <p class="muted">Compliance should accelerate progress — not stall it.</p>
       </section>
 
-      <section class="card reveal delay-3" id="start">
+      <section class="card" id="start">
         <h2>Start the Conversation</h2>
         <p class="muted">
           If your organization is navigating federal authorization or modernizing cloud security governance,
@@ -617,7 +329,7 @@
         </p>
 
         <div class="cta-row">
-          <a class="btn primary" href="#contact">Request a Strategy Call →</a>
+          <a class="btn primary" href="#contact">Request a Strategy Call</a>
           <a class="btn" href="#signature">View Signature Engagement</a>
         </div>
 
@@ -668,7 +380,6 @@
 
     <footer>
       <span>&copy; <span id="year"></span> VectorFortress. All rights reserved.</span>
-      <span class="muted">Built for clarity, speed, and modern federal security execution.</span>
     </footer>
   </div>
 
