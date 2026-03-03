@@ -16,7 +16,7 @@
       --muted: #475569;
       --border: rgba(15, 23, 42, .10);
 
-      /* Color accents (make it stand out) */
+      /* Color accents */
       --accent: #2563eb;   /* blue */
       --accent2: #7c3aed;  /* violet */
       --accent3: #06b6d4;  /* cyan */
@@ -246,43 +246,18 @@
       margin-top: -4px;
     }
 
-    /* Forms */
-    form{
-      margin-top: 12px;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-    }
-    label{
-      font-size:.9rem;
-      color: var(--muted);
-      display:block;
-      margin-bottom: 6px;
-    }
-    input, textarea{
-      width:100%;
-      padding: 12px;
+    /* Embedded form */
+    .embed{
+      margin-top: 14px;
+      overflow:hidden;
       border-radius: 14px;
-      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(15,23,42,.08);
       background: #fff;
-      color: var(--text);
-      font-size: 14px;
-      outline:none;
-      box-shadow: inset 0 1px 0 rgba(15,23,42,.04);
     }
-    input:focus, textarea:focus{
-      border-color: rgba(37,99,235,.45);
-      box-shadow: var(--focus);
-    }
-    textarea{ resize: vertical; min-height: 120px; }
-
-    .form-row{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    @media (min-width: 860px){
-      .form-row{ grid-template-columns: 1fr 1fr; }
+    .embed iframe{
+      display:block;
+      width: 100%;
+      border: 0;
     }
 
     .wrap-anywhere{ overflow-wrap:anywhere; word-break:break-word; }
@@ -306,7 +281,7 @@
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
+        <div class="mark" aria-hidden="true">🛡️</div>
         <div class="brand-name">
           <strong>VectorFortress</strong>
           <span>Federal compliance strategy</span>
@@ -329,17 +304,19 @@
         <h1>Accelerating Federal Security Compliance Through Modern Strategy</h1>
         <p class="subhead">
           We help GovTech teams and federal contractors move faster by modernizing compliance strategy, clarifying control implementation,
-          and aligning security with real engineering workflows without unnecessary documentation drag.
+          and aligning security with real engineering workflows — without unnecessary documentation drag.
         </p>
 
-       
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Request a Strategy Call</a>
+          <a class="btn secondary" href="#engagement">View Signature Engagement</a>
+        </div>
       </div>
     </header>
 
     <div class="grid">
 
       <section class="card" id="problem">
-      
         <h2>Why Compliance Slows Teams Down</h2>
         <p class="muted">Federal compliance efforts often stall because of:</p>
         <ul>
@@ -396,7 +373,7 @@
       <section class="card span-2" id="about">
         <h2>About the Founder</h2>
         <p>
-          The founder is a federal technology executive with over 15 years of IT leadership experience and extensive experience
+          Kudeha Atila is a federal technology executive with over 15 years of IT leadership experience and extensive experience
           directing cloud security and compliance initiatives within the U.S. federal ecosystem.
         </p>
 
@@ -452,48 +429,31 @@
           or modernizing governance — we welcome a focused strategic discussion.
         </p>
 
-      
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Request a Strategy Call</a>
+          <a class="btn" href="#engagement">View Signature Engagement</a>
+        </div>
 
         <div id="contact" class="callout" style="margin-top:12px;">
           <h3>Request a Strategy Call</h3>
           <p class="muted" style="margin-top:0;">
-            Next step: Complete the form below and we’ll respond via email.
+            Complete the form below and we’ll follow up directly.
           </p>
 
-          <form action="mailto:nc_aistg@outlook.com" method="POST" enctype="text/plain">
-            <div class="form-row">
-              <div>
-                <label for="name">Full name</label>
-                <input id="name" name="Name" type="text" placeholder="Your name" required />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="Email" type="email" placeholder="you@company.com" required />
-              </div>
-            </div>
+          <div class="embed">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSe4JXO-KA4vDTPnQYqBsj37PXFliDeC6cmd-QnTVOR67va_mw/viewform?embedded=true"
+              height="987"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0">
+              Loading…
+            </iframe>
+          </div>
 
-            <div class="form-row">
-              <div>
-                <label for="org">Organization</label>
-                <input id="org" name="Organization" type="text" placeholder="Company / Agency (optional)" />
-              </div>
-              <div>
-                <label for="topic">Topic</label>
-                <input id="topic" name="Topic" type="text" placeholder="ATO / SSP / Evidence / Governance / Modernization" />
-              </div>
-            </div>
-
-            <div>
-              <label for="msg">Message</label>
-              <textarea id="msg" name="Message" placeholder="Briefly describe your needs, system type, and desired timeline..." required></textarea>
-            </div>
-
-            <button class="btn primary" type="submit">Send Request</button>
-
-            <p class="muted" style="margin:10px 0 0;">
-              Prefer email? Contact us at <a href="mailto:nc_aistg@outlook.com">nc_aistg@outlook.com</a>.
-            </p>
-          </form>
+          <p class="muted" style="margin:14px 0 0;">
+            Prefer email? Contact us at <a href="mailto:nc_aistg@outlook.com">nc_aistg@outlook.com</a>.
+          </p>
         </div>
       </section>
 
