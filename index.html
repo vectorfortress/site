@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VectorFortress | Federal Cloud Security & Authorization Strategy</title>
-  <meta name="description" content="VectorFortress helps GovTech companies and federal contractors design modern authorization strategies for cloud-native systems—without unnecessary compliance friction." />
+  <title>VectorFortress | Accelerating Federal Security Compliance</title>
+  <meta name="description" content="VectorFortress helps GovTech companies and federal contractors accelerate federal security compliance through modern, engineering-aligned strategy—without unnecessary friction." />
 
   <style>
     :root{
-      /* Light, simple, high-contrast palette */
-      --bg: #f7f9fc;           /* page background */
-      --surface: #ffffff;      /* cards */
-      --surface2: #f2f6ff;     /* subtle section tint */
-      --text: #0f172a;         /* slate-900 */
-      --muted: #475569;        /* slate-600 */
+      /* Light, simple palette */
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --surface2: #f1f6ff;
+      --text: #0f172a;
+      --muted: #475569;
       --border: rgba(15, 23, 42, .10);
 
-      /* Brand color pops */
-      --accent: #2563eb;       /* blue */
-      --accent2: #7c3aed;      /* violet */
-      --accent3: #06b6d4;      /* cyan */
+      /* Color accents (make it stand out) */
+      --accent: #2563eb;   /* blue */
+      --accent2: #7c3aed;  /* violet */
+      --accent3: #06b6d4;  /* cyan */
 
       --max: 980px;
       --radius: 16px;
@@ -29,7 +29,7 @@
     }
 
     *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -42,8 +42,8 @@
         var(--bg);
     }
 
-    a{ color: var(--accent); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a{ color: var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
     .wrap{
       max-width: var(--max);
@@ -56,7 +56,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(247,249,252,.85);
+      background: rgba(247,249,252,.88);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -81,7 +81,7 @@
       border-radius: 12px;
       display:grid;
       place-items:center;
-      color: #fff;
+      color:#fff;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       box-shadow: var(--shadow2);
       font-size: 18px;
@@ -91,7 +91,7 @@
       flex-direction:column;
       line-height: 1.1;
     }
-    .brand-name strong{ font-size: .98rem; letter-spacing: .2px; }
+    .brand-name strong{ font-size: .98rem; letter-spacing:.2px; }
     .brand-name span{ font-size: .82rem; color: var(--muted); margin-top: 2px; }
 
     nav{
@@ -115,9 +115,7 @@
       nav{ display:flex; }
     }
 
-    header{
-      padding: 18px 0 8px;
-    }
+    header{ padding: 18px 0 8px; }
 
     .hero{
       border: 1px solid var(--border);
@@ -134,20 +132,20 @@
       padding: 10px 14px;
       border: 1px solid rgba(37,99,235,.18);
       border-radius: 999px;
-      background: rgba(255,255,255,.8);
+      background: rgba(255,255,255,.85);
       box-shadow: var(--shadow2);
       font-weight: 800;
       letter-spacing: .2px;
     }
     .badge .dot{
       width:10px; height:10px;
-      border-radius: 999px;
+      border-radius:999px;
       background: linear-gradient(135deg, var(--accent3), var(--accent2));
     }
 
     h1{
-      margin: 14px 0 6px;
-      font-size: clamp(1.9rem, 2.8vw, 2.45rem);
+      margin: 14px 0 8px;
+      font-size: clamp(1.9rem, 2.8vw, 2.55rem);
       line-height: 1.15;
       letter-spacing: .2px;
     }
@@ -156,12 +154,12 @@
       margin: 0 0 14px;
       font-size: 1.05rem;
       color: var(--muted);
-      max-width: 74ch;
+      max-width: 78ch;
     }
 
     .cta-row{
       display:flex;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
       gap: 10px;
       margin-top: 10px;
       align-items:center;
@@ -178,7 +176,7 @@
       color: var(--text);
       font-weight: 750;
       text-decoration:none;
-      cursor: pointer;
+      cursor:pointer;
       box-shadow: 0 8px 18px rgba(15,23,42,.06);
       transition: transform .12s ease, filter .12s ease;
       white-space: nowrap;
@@ -187,11 +185,11 @@
     .btn.primary{
       border-color: rgba(37,99,235,.25);
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
+      color:#fff;
     }
     .btn.secondary{
-      background: rgba(37,99,235,.08);
-      border-color: rgba(37,99,235,.18);
+      background: rgba(6,182,212,.10);
+      border-color: rgba(6,182,212,.24);
       color: var(--text);
     }
 
@@ -213,10 +211,9 @@
       box-shadow: var(--shadow2);
       padding: 18px 18px 16px;
     }
-
     .card.accent{
-      background: linear-gradient(180deg, rgba(6,182,212,.08), rgba(255,255,255,1));
-      border-color: rgba(6,182,212,.20);
+      background: linear-gradient(180deg, rgba(6,182,212,.09), rgba(255,255,255,1));
+      border-color: rgba(6,182,212,.22);
     }
 
     h2{
@@ -241,11 +238,7 @@
       border-radius: var(--radius);
       padding: 16px 16px 14px;
     }
-
-    .callout h3{
-      margin: 0 0 8px;
-      font-size: 1.02rem;
-    }
+    .callout h3{ margin: 0 0 8px; font-size: 1.02rem; }
 
     .kicker{
       font-size: .92rem;
@@ -261,20 +254,20 @@
       gap: 10px;
     }
     label{
-      font-size: .9rem;
+      font-size:.9rem;
       color: var(--muted);
       display:block;
       margin-bottom: 6px;
     }
     input, textarea{
-      width: 100%;
+      width:100%;
       padding: 12px;
       border-radius: 14px;
       border: 1px solid var(--border);
       background: #fff;
       color: var(--text);
       font-size: 14px;
-      outline: none;
+      outline:none;
       box-shadow: inset 0 1px 0 rgba(15,23,42,.04);
     }
     input:focus, textarea:focus{
@@ -292,8 +285,7 @@
       .form-row{ grid-template-columns: 1fr 1fr; }
     }
 
-    /* Optional: improve long URLs wrapping */
-    .wrap-anywhere{ overflow-wrap: anywhere; word-break: break-word; }
+    .wrap-anywhere{ overflow-wrap:anywhere; word-break:break-word; }
 
     footer{
       margin-top: 18px;
@@ -317,13 +309,13 @@
         <div class="mark" aria-hidden="true">🛡️</div>
         <div class="brand-name">
           <strong>VectorFortress</strong>
-          <span>Federal authorization strategy</span>
+          <span>Federal compliance strategy</span>
         </div>
       </div>
       <nav aria-label="Primary">
-        <a href="#problem">Problem</a>
-        <a href="#what-we-do">What we do</a>
-        <a href="#signature">Engagement</a>
+        <a href="#problem">Challenges</a>
+        <a href="#approach">Approach</a>
+        <a href="#engagement">Engagement</a>
         <a href="#about">Founder</a>
         <a class="btn primary" href="#contact">Request a call</a>
       </nav>
@@ -334,15 +326,15 @@
     <header>
       <div class="hero">
         <div class="badge"><span class="dot"></span> VectorFortress</div>
-        <h1>Federal Cloud Security &amp; Authorization Strategy</h1>
+        <h1>Accelerating Federal Security Compliance Through Modern Strategy</h1>
         <p class="subhead">
-          We help GovTech companies and federal contractors design clear, modern authorization strategies
-          for cloud-native systems — without unnecessary compliance friction.
+          We help GovTech teams and federal contractors move faster by modernizing compliance strategy, clarifying control implementation,
+          and aligning security with real engineering workflows — without unnecessary documentation drag.
         </p>
 
         <div class="cta-row">
           <a class="btn primary" href="#contact">Request a Strategy Call</a>
-          <a class="btn secondary" href="#signature">View Signature Engagement</a>
+          <a class="btn secondary" href="#engagement">View Signature Engagement</a>
         </div>
       </div>
     </header>
@@ -350,72 +342,72 @@
     <div class="grid">
 
       <section class="card" id="problem">
-        <h2>Federal Security Is Not Just Documentation</h2>
-        <p class="muted">Many federal SaaS platforms struggle with:</p>
+        <h2>Why Compliance Slows Teams Down</h2>
+        <p class="muted">Federal compliance efforts often stall because of:</p>
         <ul>
-          <li>Lengthy authorization timelines</li>
-          <li>Overcomplicated SSP development</li>
-          <li>Misalignment between engineering and compliance</li>
-          <li>Executive uncertainty around risk posture</li>
+          <li>Unclear control implementation and ownership</li>
+          <li>SSP content that doesn’t match how the system actually works</li>
+          <li>Manual evidence collection and inconsistent artifacts</li>
+          <li>Misalignment between engineering, security, and executives</li>
         </ul>
         <p class="muted">
-          Modern cloud systems require structured, strategic authorization design — not recycled legacy models.
+          The result is delays, rework, and risk decisions that aren’t clearly documented.
         </p>
       </section>
 
-      <section class="card" id="what-we-do">
-        <h2>What We Do</h2>
+      <section class="card" id="approach">
+        <h2>Our Modern Strategy Approach</h2>
         <p class="muted">VectorFortress provides executive-level advisory focused on:</p>
         <ul>
-          <li>Cloud-native authorization strategy</li>
-          <li>SSP architecture structuring</li>
-          <li>NIST 800-53 control alignment</li>
-          <li>Governance and risk modernization</li>
-          <li>Executive security roadmap development</li>
+          <li>Compliance strategy designed around real system architecture</li>
+          <li>NIST 800-53 control alignment with clean, defensible narratives</li>
+          <li>Artifact strategy (what to collect, how to standardize, how to scale)</li>
+          <li>Governance modernization and risk decision clarity</li>
+          <li>Roadmaps that leadership and engineering can execute together</li>
         </ul>
         <p class="muted">
-          We help organizations reduce uncertainty, improve clarity, and accelerate authorization readiness.
+          We turn compliance into a structured program — not a documentation scramble.
         </p>
       </section>
 
-      <section class="card" id="who-we-advise">
-        <h2>Who We Advise</h2>
+      <section class="card" id="who-we-serve">
+        <h2>Who We Support</h2>
         <ul>
           <li>GovTech startups entering federal markets</li>
-          <li>SaaS platforms preparing for federal authorization</li>
+          <li>SaaS teams preparing for ATO or continuous monitoring maturity</li>
           <li>Contractors modernizing legacy security programs</li>
-          <li>Executive teams seeking structured compliance strategy</li>
+          <li>Leaders who need clear risk posture and compliance direction</li>
         </ul>
       </section>
 
-      <section class="card accent" id="signature">
+      <section class="card accent" id="engagement">
         <h2>Signature Engagement</h2>
         <div class="callout">
-          <h3>Federal Authorization Strategy Diagnostic</h3>
-          <p class="muted">A focused advisory engagement designed to:</p>
+          <h3>Federal Compliance Acceleration Diagnostic</h3>
+          <p class="muted">A focused engagement designed to:</p>
           <ul>
-            <li>Assess current authorization posture</li>
-            <li>Identify structural inefficiencies</li>
-            <li>Align security architecture with federal expectations</li>
-            <li>Deliver a concise executive roadmap</li>
+            <li>Assess current compliance posture and bottlenecks</li>
+            <li>Identify high-impact fixes to reduce rework and delays</li>
+            <li>Align SSP structure and evidence strategy to the system architecture</li>
+            <li>Deliver an executive-ready roadmap for the next 30–90 days</li>
           </ul>
-          <p class="kicker">This is strategic advisory — not checklist compliance consulting.</p>
+          <p class="kicker">Strategic advisory — designed to accelerate outcomes, not inflate documentation.</p>
         </div>
       </section>
 
       <section class="card span-2" id="about">
         <h2>About the Founder</h2>
         <p>
-          Kudeha Atila is a federal technology executive with over 15 years of IT leadership experience and
-          extensive experience directing cloud security and compliance initiatives within the U.S. federal ecosystem.
+          Kudeha Atila is a federal technology executive with over 15 years of IT leadership experience and extensive experience
+          directing cloud security and compliance initiatives within the U.S. federal ecosystem.
         </p>
 
         <p class="muted">His work focuses on the intersection of:</p>
         <ul>
-          <li>Cloud-native system architecture</li>
-          <li>Federal authorization strategy</li>
-          <li>Governance and risk alignment</li>
-          <li>Executive-level security modernization</li>
+          <li>Cloud-native system strategy</li>
+          <li>Federal compliance and authorization modernization</li>
+          <li>Governance, risk decisions, and control implementation clarity</li>
+          <li>Executive-level security program direction</li>
         </ul>
 
         <p class="muted">
@@ -439,36 +431,36 @@
         </p>
 
         <p class="muted">
-          VectorFortress was founded to bring clarity, structure, and strategic direction to federal cloud security efforts.
+          VectorFortress was founded to bring clarity, structure, and speed to federal security compliance — without compromising rigor.
         </p>
       </section>
 
-      <section class="card" id="philosophy">
-        <h2>Our Philosophy</h2>
-        <p class="muted">Federal security should be:</p>
+      <section class="card" id="principles">
+        <h2>Guiding Principles</h2>
+        <p class="muted">Modern federal compliance should be:</p>
         <ul>
-          <li>Structured</li>
-          <li>Modern</li>
-          <li>Aligned with engineering realities</li>
+          <li>Architecture-first</li>
+          <li>Evidence-driven</li>
+          <li>Aligned with engineering reality</li>
           <li>Executively understandable</li>
         </ul>
-        <p class="muted">Compliance should accelerate progress — not stall it.</p>
+        <p class="muted">Compliance should accelerate delivery — not stall it.</p>
       </section>
 
       <section class="card" id="start">
         <h2>Start the Conversation</h2>
         <p class="muted">
-          If your organization is navigating federal authorization or modernizing cloud security governance,
-          we welcome a strategic discussion.
+          If your organization is preparing for federal compliance, strengthening your SSP/evidence strategy,
+          or modernizing governance — we welcome a focused strategic discussion.
         </p>
 
         <div class="cta-row">
           <a class="btn primary" href="#contact">Request a Strategy Call</a>
-          
+          <a class="btn" href="#engagement">View Signature Engagement</a>
         </div>
 
         <div id="contact" class="callout" style="margin-top:12px;">
-      
+          <h3>Request a Strategy Call</h3>
           <p class="muted" style="margin-top:0;">
             Next step: Complete the form below and we’ll respond via email.
           </p>
@@ -492,13 +484,13 @@
               </div>
               <div>
                 <label for="topic">Topic</label>
-                <input id="topic" name="Topic" type="text" placeholder="Authorization / Cloud governance / Security modernization" />
+                <input id="topic" name="Topic" type="text" placeholder="ATO / SSP / Evidence / Governance / Modernization" />
               </div>
             </div>
 
             <div>
               <label for="msg">Message</label>
-              <textarea id="msg" name="Message" placeholder="Briefly describe your needs and desired timeline..." required></textarea>
+              <textarea id="msg" name="Message" placeholder="Briefly describe your needs, system type, and desired timeline..." required></textarea>
             </div>
 
             <button class="btn primary" type="submit">Send Request</button>
@@ -514,7 +506,7 @@
 
     <footer>
       <span>&copy; <span id="year"></span> VectorFortress. All rights reserved.</span>
-      <span>Modern security strategy, made simple.</span>
+      <span>Modern compliance strategy. Faster outcomes.</span>
     </footer>
   </div>
 
