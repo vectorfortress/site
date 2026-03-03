@@ -4,11 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VectorFortress | Accelerating Federal Security Compliance</title>
-  <meta name="description" content="VectorFortress helps GovTech companies and federal contractors accelerate federal security compliance through modern, engineering-aligned strategy—without unnecessary friction." />
+  <meta name="description" content="VectorFortress helps GovTech companies and federal contractors accelerate federal security compliance through modern, engineering-aligned strategy." />
 
   <style>
     :root{
-      /* Light, simple palette */
       --bg: #f7f9fc;
       --surface: #ffffff;
       --surface2: #f1f6ff;
@@ -16,15 +15,14 @@
       --muted: #475569;
       --border: rgba(15, 23, 42, .10);
 
-      /* Color accents */
-      --accent: #2563eb;   /* blue */
-      --accent2: #7c3aed;  /* violet */
-      --accent3: #06b6d4;  /* cyan */
+      --accent: #2563eb;
+      --accent2: #7c3aed;
+      --accent3: #06b6d4;
 
-      --max: 980px;
-      --radius: 16px;
-      --shadow: 0 18px 50px rgba(15, 23, 42, .10);
-      --shadow2: 0 10px 25px rgba(15, 23, 42, .08);
+      --max: 1080px;
+      --radius: 18px;
+      --shadow: 0 22px 60px rgba(15, 23, 42, .12);
+      --shadow2: 0 12px 30px rgba(15, 23, 42, .08);
       --focus: 0 0 0 3px rgba(37, 99, 235, .18);
     }
 
@@ -33,7 +31,7 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.6;
+      line-height:1.65;
       color: var(--text);
       background:
         radial-gradient(900px 520px at 10% 10%, rgba(37,99,235,.10), transparent 55%),
@@ -48,22 +46,22 @@
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 22px 18px 56px;
+      padding: 18px 18px 70px;
     }
 
-    /* Simple top bar */
+    /* Refined top navigation */
     .topbar{
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(247,249,252,.88);
+      z-index: 50;
+      background: rgba(247,249,252,.86);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
     .topbar-inner{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 10px 18px;
+      padding: 12px 18px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -73,12 +71,12 @@
       display:flex;
       align-items:center;
       gap: 10px;
-      min-width: 220px;
+      min-width: 240px;
     }
     .mark{
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
       display:grid;
       place-items:center;
       color:#fff;
@@ -91,50 +89,74 @@
       flex-direction:column;
       line-height: 1.1;
     }
-    .brand-name strong{ font-size: .98rem; letter-spacing:.2px; }
-    .brand-name span{ font-size: .82rem; color: var(--muted); margin-top: 2px; }
+    .brand-name strong{ font-size: 1.02rem; letter-spacing:.2px; }
+    .brand-name span{ font-size: .84rem; color: var(--muted); margin-top: 2px; }
 
     nav{
       display:none;
-      gap: 8px;
       align-items:center;
+      gap: 8px;
     }
     nav a{
       padding: 8px 10px;
       border-radius: 12px;
       color: var(--muted);
       font-weight: 650;
-      font-size: .92rem;
+      font-size: .93rem;
     }
     nav a:hover{
       text-decoration:none;
       background: rgba(37,99,235,.08);
       color: var(--text);
     }
-    @media (min-width: 860px){
+    .nav-cta{
+      padding: 10px 14px !important;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#fff !important;
+      border: none;
+      box-shadow: var(--shadow2);
+      font-weight: 750;
+    }
+    .nav-cta:hover{ filter: brightness(1.02); }
+
+    @media (min-width: 920px){
       nav{ display:flex; }
     }
 
-    header{ padding: 18px 0 8px; }
-
+    /* Premium hero */
     .hero{
+      margin-top: 18px;
       border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(37,99,235,.08), rgba(124,58,237,.06));
-      border-radius: 22px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(37,99,235,.09), rgba(124,58,237,.07));
       box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
     }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(900px 260px at 18% 10%, rgba(6,182,212,.14), transparent 60%),
+        radial-gradient(900px 260px at 86% 5%, rgba(124,58,237,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero > *{ position:relative; }
 
     .badge{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding: 10px 14px;
-      border: 1px solid rgba(37,99,235,.18);
+      padding: 9px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(37,99,235,.22);
       box-shadow: var(--shadow2);
       font-weight: 800;
+      font-size: .9rem;
       letter-spacing: .2px;
     }
     .badge .dot{
@@ -144,130 +166,162 @@
     }
 
     h1{
-      margin: 14px 0 8px;
-      font-size: clamp(1.9rem, 2.8vw, 2.55rem);
-      line-height: 1.15;
+      margin: 14px 0 10px;
+      font-size: clamp(2.05rem, 3.1vw, 2.85rem);
+      line-height: 1.12;
       letter-spacing: .2px;
     }
-
     .subhead{
-      margin: 0 0 14px;
-      font-size: 1.05rem;
+      margin: 0;
+      font-size: 1.08rem;
       color: var(--muted);
-      max-width: 78ch;
+      max-width: 80ch;
+    }
+
+    .hero-row{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (min-width: 980px){
+      .hero-row{ grid-template-columns: 1.35fr .65fr; }
     }
 
     .cta-row{
+      margin-top: 16px;
       display:flex;
       flex-wrap:wrap;
       gap: 10px;
-      margin-top: 10px;
       align-items:center;
     }
-
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding: 10px 14px;
+      padding: 11px 16px;
       border-radius: 14px;
       border: 1px solid var(--border);
       background: #fff;
-      color: var(--text);
       font-weight: 750;
       text-decoration:none;
       cursor:pointer;
-      box-shadow: 0 8px 18px rgba(15,23,42,.06);
+      box-shadow: 0 10px 22px rgba(15,23,42,.06);
       transition: transform .12s ease, filter .12s ease;
       white-space: nowrap;
+      color: var(--text);
     }
     .btn:hover{ filter: brightness(1.02); transform: translateY(-1px); text-decoration:none; }
     .btn.primary{
-      border-color: rgba(37,99,235,.25);
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color:#fff;
+      border: none;
     }
     .btn.secondary{
       background: rgba(6,182,212,.10);
-      border-color: rgba(6,182,212,.24);
-      color: var(--text);
+      border-color: rgba(6,182,212,.26);
     }
 
+    .hero-panel{
+      background: rgba(255,255,255,.80);
+      border: 1px solid rgba(15, 23, 42, .10);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 16px;
+    }
+    .hero-panel h2{
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      letter-spacing:.2px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, .10);
+      background: rgba(37,99,235,.06);
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 6px 6px 0 0;
+    }
+
+    /* Main sections */
     .grid{
+      margin-top: 18px;
       display:grid;
       grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 16px;
+      gap: 16px;
     }
-    @media (min-width: 860px){
+    @media (min-width: 920px){
       .grid{ grid-template-columns: 1fr 1fr; }
       .span-2{ grid-column: span 2; }
     }
 
     .card{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
       background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 20px;
       box-shadow: var(--shadow2);
-      padding: 18px 18px 16px;
     }
-    .card.accent{
+    .card.highlight{
       background: linear-gradient(180deg, rgba(6,182,212,.09), rgba(255,255,255,1));
-      border-color: rgba(6,182,212,.22);
+      border-color: rgba(6,182,212,.24);
     }
 
     h2{
-      margin: 0 0 10px;
-      font-size: 1.12rem;
+      margin:0 0 10px;
+      font-size:1.15rem;
       letter-spacing: .2px;
     }
 
-    p{ margin: 0 0 12px; }
     .muted{ color: var(--muted); }
 
     ul{
-      margin: 10px 0 12px 18px;
-      padding: 0;
+      margin:10px 0 12px 18px;
+      padding:0;
     }
     li{ margin: 6px 0; }
     li::marker{ color: var(--accent); }
 
     .callout{
-      border: 1px solid rgba(37,99,235,.18);
-      background: var(--surface2);
-      border-radius: var(--radius);
-      padding: 16px 16px 14px;
-    }
-    .callout h3{ margin: 0 0 8px; font-size: 1.02rem; }
-
-    .kicker{
-      font-size: .92rem;
-      color: var(--muted);
-      margin-top: -4px;
-    }
-
-    /* Embedded form */
-    .embed{
       margin-top: 14px;
-      overflow:hidden;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(15,23,42,.08);
+      padding: 16px;
+      border-radius: var(--radius);
+      background: var(--surface2);
+      border: 1px solid rgba(37,99,235,.20);
+    }
+
+    /* Contact / Form */
+    .form-shell{
+      margin-top: 14px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow2);
       background: #fff;
     }
-    .embed iframe{
-      display:block;
+    iframe{
       width: 100%;
       border: 0;
+      display:block;
+      height: 980px; /* fallback if resize cannot happen */
+    }
+    .form-note{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .95rem;
     }
 
-    .wrap-anywhere{ overflow-wrap:anywhere; word-break:break-word; }
-
     footer{
-      margin-top: 18px;
-      padding-top: 16px;
+      margin-top: 34px;
+      padding-top: 18px;
       border-top: 1px solid var(--border);
+      font-size:.92rem;
       color: var(--muted);
-      font-size: .92rem;
       display:flex;
       justify-content:space-between;
       gap: 10px;
@@ -284,89 +338,96 @@
         <div class="mark" aria-hidden="true">🛡️</div>
         <div class="brand-name">
           <strong>VectorFortress</strong>
-          <span>Federal compliance strategy</span>
+          <span>Modern federal compliance strategy</span>
         </div>
       </div>
+
       <nav aria-label="Primary">
-        <a href="#problem">Challenges</a>
+        <a href="#challenges">Challenges</a>
         <a href="#approach">Approach</a>
         <a href="#engagement">Engagement</a>
         <a href="#about">Founder</a>
-        <a class="btn primary" href="#contact">Request a call</a>
+        <a class="nav-cta" href="#contact">Request a call</a>
       </nav>
     </div>
   </div>
 
   <div class="wrap">
-    <header>
-      <div class="hero">
-        <div class="badge"><span class="dot"></span> VectorFortress</div>
-        <h1>Accelerating Federal Security Compliance Through Modern Strategy</h1>
-        <p class="subhead">
-          We help GovTech teams and federal contractors move faster by modernizing compliance strategy, clarifying control implementation,
-          and aligning security with real engineering workflows — without unnecessary documentation drag.
-        </p>
 
-        <div class="cta-row">
-          <a class="btn primary" href="#contact">Request a Strategy Call</a>
-          <a class="btn secondary" href="#engagement">View Signature Engagement</a>
+    <header class="hero" id="top">
+      <div class="badge"><span class="dot"></span> VectorFortress</div>
+      <h1>Accelerating Federal Security Compliance Through Modern Strategy</h1>
+      <p class="subhead">
+        We help GovTech teams and federal contractors move faster by modernizing compliance strategy, clarifying control implementation,
+        and aligning security with real engineering workflows — without unnecessary documentation drag.
+      </p>
+
+      <div class="hero-row">
+        <div>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Request a Strategy Call</a>
+            <a class="btn secondary" href="#engagement">View Signature Engagement</a>
+          </div>
+          <p class="muted" style="margin:12px 0 0;">
+            Outcome: clearer risk posture, cleaner evidence, fewer cycles of rework.
+          </p>
         </div>
+
+        <aside class="hero-panel" aria-label="Focus areas">
+          <h2>Best for teams who need:</h2>
+          <div class="pill">ATO / readiness</div>
+          <div class="pill">SSP clarity</div>
+          <div class="pill">Evidence strategy</div>
+          <div class="pill">NIST 800-53 alignment</div>
+          <div class="pill">Executive roadmap</div>
+        </aside>
       </div>
     </header>
 
-    <div class="grid">
+    <main class="grid">
 
-      <section class="card" id="problem">
+      <section class="card" id="challenges">
         <h2>Why Compliance Slows Teams Down</h2>
         <p class="muted">Federal compliance efforts often stall because of:</p>
         <ul>
           <li>Unclear control implementation and ownership</li>
-          <li>SSP content that doesn’t match how the system actually works</li>
+          <li>SSPs that don’t reflect actual system architecture</li>
           <li>Manual evidence collection and inconsistent artifacts</li>
-          <li>Misalignment between engineering, security, and executives</li>
+          <li>Misalignment between engineering, security, and leadership</li>
         </ul>
         <p class="muted">
-          The result is delays, rework, and risk decisions that aren’t clearly documented.
+          The result: delays, rework, and risk decisions that aren’t clearly documented.
         </p>
       </section>
 
       <section class="card" id="approach">
         <h2>Our Modern Strategy Approach</h2>
-        <p class="muted">VectorFortress provides executive-level advisory focused on:</p>
+        <p class="muted">Executive-level advisory focused on:</p>
         <ul>
-          <li>Compliance strategy designed around real system architecture</li>
-          <li>NIST 800-53 control alignment with clean, defensible narratives</li>
+          <li>Architecture-first compliance design</li>
+          <li>NIST 800-53 control clarity with defensible narratives</li>
           <li>Artifact strategy (what to collect, how to standardize, how to scale)</li>
           <li>Governance modernization and risk decision clarity</li>
-          <li>Roadmaps that leadership and engineering can execute together</li>
+          <li>Roadmaps engineering and leadership can execute together</li>
         </ul>
         <p class="muted">
-          We turn compliance into a structured program — not a documentation scramble.
+          Compliance becomes structured and scalable — not reactive.
         </p>
       </section>
 
-      <section class="card" id="who-we-serve">
-        <h2>Who We Support</h2>
-        <ul>
-          <li>GovTech startups entering federal markets</li>
-          <li>SaaS teams preparing for ATO or continuous monitoring maturity</li>
-          <li>Contractors modernizing legacy security programs</li>
-          <li>Leaders who need clear risk posture and compliance direction</li>
-        </ul>
-      </section>
-
-      <section class="card accent" id="engagement">
+      <section class="card highlight span-2" id="engagement">
         <h2>Signature Engagement</h2>
         <div class="callout">
-          <h3>Federal Compliance Acceleration Diagnostic</h3>
-          <p class="muted">A focused engagement designed to:</p>
+          <strong>Federal Compliance Acceleration Diagnostic</strong>
           <ul>
-            <li>Assess current compliance posture and bottlenecks</li>
-            <li>Identify high-impact fixes to reduce rework and delays</li>
-            <li>Align SSP structure and evidence strategy to the system architecture</li>
-            <li>Deliver an executive-ready roadmap for the next 30–90 days</li>
+            <li>Assess current posture and bottlenecks</li>
+            <li>Identify high-impact structural improvements</li>
+            <li>Align SSP structure and evidence strategy</li>
+            <li>Deliver a 30–90 day executive roadmap</li>
           </ul>
-          <p class="kicker">Strategic advisory — designed to accelerate outcomes, not inflate documentation.</p>
+          <p class="muted" style="margin:0;">
+            Strategic advisory designed to accelerate outcomes — not inflate paperwork.
+          </p>
         </div>
       </section>
 
@@ -386,10 +447,6 @@
         </ul>
 
         <p class="muted">
-          Recognized for aligning cybersecurity strategy with mission delivery, regulatory compliance, and digital modernization at scale.
-        </p>
-
-        <p class="wrap-anywhere muted">
           Presented on modernizing federal digital services, including
           <a href="https://csrc.nist.gov/presentations/2024/deploying-federal-websites-faster" target="_blank" rel="noopener">
             Deploying Federal Websites Faster
@@ -397,67 +454,40 @@
           for the NIST Cybersecurity &amp; Privacy Controls community.
         </p>
 
-        <p class="wrap-anywhere muted">
+        <p class="muted">
           Co-author and Editor of
           <a href="https://www.amazon.com/How-Pass-CRISC-Exam-Information/dp/0692170472/ref=sr_1_1?crid=3JVWPD77XOUY5&dib=eyJ2IjoiMSJ9.ETt0nEDUjI4aDVvOqdlidA.75IjwilhglL3Nx2V7a93hepxSCcCU2F8cNHuOFcguh4&dib_tag=se&keywords=Kudeha+Atila&qid=1772061294&s=digital-text&sprefix=kudeha+atila%2Cdigital-text%2C402&sr=1-1"
              target="_blank" rel="noopener">
             How to Pass the CRISC Exam
           </a>.
         </p>
+      </section>
 
-        <p class="muted">
-          VectorFortress was founded to bring clarity, structure, and speed to federal security compliance — without compromising rigor.
+      <section class="card span-2" id="contact">
+        <h2>Request a Strategy Call</h2>
+        <p class="muted">Complete the form below and we will follow up directly.</p>
+
+        <div class="form-shell">
+          <!-- IMPORTANT: Google Forms iframes are cross-origin, so true dynamic height is not reliably possible with JS.
+               This implementation auto-resizes as best-effort by: (1) using a roomy default height,
+               (2) adjusting for viewport sizes, and (3) offering a “Open in new tab” fallback. -->
+          <iframe
+            id="gform"
+            src="https://docs.google.com/forms/d/e/1FAIpQLScDcf9Bgkz5zEFe_WXojDn_itUZxgyCcAoCfwp4wdWjYPIoSw/viewform?embedded=true"
+            title="VectorFortress Strategy Call Request Form"
+            loading="lazy">
+            Loading…
+          </iframe>
+        </div>
+
+        <p class="form-note">
+          If the embedded form looks cut off on your device,
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScDcf9Bgkz5zEFe_WXojDn_itUZxgyCcAoCfwp4wdWjYPIoSw/viewform"
+             target="_blank" rel="noopener">open the form in a new tab</a>.
         </p>
       </section>
 
-      <section class="card" id="principles">
-        <h2>Guiding Principles</h2>
-        <p class="muted">Modern federal compliance should be:</p>
-        <ul>
-          <li>Architecture-first</li>
-          <li>Evidence-driven</li>
-          <li>Aligned with engineering reality</li>
-          <li>Executively understandable</li>
-        </ul>
-        <p class="muted">Compliance should accelerate delivery — not stall it.</p>
-      </section>
-
-      <section class="card" id="start">
-        <h2>Start the Conversation</h2>
-        <p class="muted">
-          If your organization is preparing for federal compliance, strengthening your SSP/evidence strategy,
-          or modernizing governance — we welcome a focused strategic discussion.
-        </p>
-
-        <div class="cta-row">
-          <a class="btn primary" href="#contact">Request a Strategy Call</a>
-          <a class="btn" href="#engagement">View Signature Engagement</a>
-        </div>
-
-        <div id="contact" class="callout" style="margin-top:12px;">
-          <h3>Request a Strategy Call</h3>
-          <p class="muted" style="margin-top:0;">
-            Complete the form below and we’ll follow up directly.
-          </p>
-
-          <div class="embed">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSe4JXO-KA4vDTPnQYqBsj37PXFliDeC6cmd-QnTVOR67va_mw/viewform?embedded=true"
-              height="987"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0">
-              Loading…
-            </iframe>
-          </div>
-
-          <p class="muted" style="margin:14px 0 0;">
-            Prefer email? Contact us at <a href="mailto:nc_aistg@outlook.com">nc_aistg@outlook.com</a>.
-          </p>
-        </div>
-      </section>
-
-    </div>
+    </main>
 
     <footer>
       <span>&copy; <span id="year"></span> VectorFortress. All rights reserved.</span>
@@ -466,7 +496,28 @@
   </div>
 
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Best-effort “auto-resize” for Google Forms iframe.
+    // NOTE: Because the iframe is cross-origin (Google), we cannot read its content height.
+    // Instead, we set a responsive height based on viewport and keep a generous minimum.
+    (function () {
+      const iframe = document.getElementById("gform");
+      if (!iframe) return;
+
+      function setHeight() {
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        // Aim for “almost full screen” on smaller devices; keep comfortable minimum on desktop.
+        const isSmall = window.matchMedia("(max-width: 720px)").matches;
+        const target = isSmall ? Math.round(vh * 0.86) : Math.round(vh * 0.78);
+        const minH = isSmall ? 840 : 980;
+        iframe.style.height = Math.max(target, minH) + "px";
+      }
+
+      setHeight();
+      window.addEventListener("resize", setHeight, { passive: true });
+    })();
   </script>
 </body>
 </html>
