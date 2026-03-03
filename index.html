@@ -8,28 +8,38 @@
 
   <style>
     :root{
-      --bg: #0b1220;          /* deep navy */
-      --panel: #0f1a30;       /* slightly lighter navy */
-      --text: #e7edf7;        /* soft white */
-      --muted: #b8c6dc;       /* muted blue-gray */
-      --border: rgba(231,237,247,.14);
-      --accent: #7dd3fc;      /* light sky */
-      --accent2:#a78bfa;      /* soft violet */
+      /* Light, simple, high-contrast palette */
+      --bg: #f7f9fc;           /* page background */
+      --surface: #ffffff;      /* cards */
+      --surface2: #f2f6ff;     /* subtle section tint */
+      --text: #0f172a;         /* slate-900 */
+      --muted: #475569;        /* slate-600 */
+      --border: rgba(15, 23, 42, .10);
+
+      /* Brand color pops */
+      --accent: #2563eb;       /* blue */
+      --accent2: #7c3aed;      /* violet */
+      --accent3: #06b6d4;      /* cyan */
+
       --max: 980px;
       --radius: 16px;
-      --shadow: 0 16px 50px rgba(0,0,0,.35);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .10);
+      --shadow2: 0 10px 25px rgba(15, 23, 42, .08);
+      --focus: 0 0 0 3px rgba(37, 99, 235, .18);
     }
 
     *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.6;
       color: var(--text);
-      background: radial-gradient(1200px 700px at 15% 10%, rgba(125,211,252,.18), transparent 55%),
-                  radial-gradient(900px 600px at 80% 20%, rgba(167,139,250,.16), transparent 55%),
-                  radial-gradient(800px 600px at 50% 100%, rgba(125,211,252,.10), transparent 60%),
-                  var(--bg);
+      background:
+        radial-gradient(900px 520px at 10% 10%, rgba(37,99,235,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 20%, rgba(124,58,237,.10), transparent 55%),
+        radial-gradient(800px 520px at 50% 100%, rgba(6,182,212,.08), transparent 60%),
+        var(--bg);
     }
 
     a{ color: var(--accent); text-decoration: none; }
@@ -38,11 +48,83 @@
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 18px 56px;
+      padding: 22px 18px 56px;
+    }
+
+    /* Simple top bar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247,249,252,.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 220px;
+    }
+    .mark{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: var(--shadow2);
+      font-size: 18px;
+    }
+    .brand-name{
+      display:flex;
+      flex-direction:column;
+      line-height: 1.1;
+    }
+    .brand-name strong{ font-size: .98rem; letter-spacing: .2px; }
+    .brand-name span{ font-size: .82rem; color: var(--muted); margin-top: 2px; }
+
+    nav{
+      display:none;
+      gap: 8px;
+      align-items:center;
+    }
+    nav a{
+      padding: 8px 10px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: .92rem;
+    }
+    nav a:hover{
+      text-decoration:none;
+      background: rgba(37,99,235,.08);
+      color: var(--text);
+    }
+    @media (min-width: 860px){
+      nav{ display:flex; }
     }
 
     header{
-      padding: 22px 0 8px;
+      padding: 18px 0 8px;
+    }
+
+    .hero{
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(37,99,235,.08), rgba(124,58,237,.06));
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
     }
 
     .badge{
@@ -50,81 +132,31 @@
       align-items:center;
       gap:10px;
       padding: 10px 14px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(37,99,235,.18);
       border-radius: 999px;
-      background: rgba(15,26,48,.55);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      font-weight: 700;
+      background: rgba(255,255,255,.8);
+      box-shadow: var(--shadow2);
+      font-weight: 800;
       letter-spacing: .2px;
+    }
+    .badge .dot{
+      width:10px; height:10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent3), var(--accent2));
     }
 
     h1{
       margin: 14px 0 6px;
-      font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+      font-size: clamp(1.9rem, 2.8vw, 2.45rem);
       line-height: 1.15;
-    }
-
-    .subhead{
-      margin: 0 0 16px;
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 70ch;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    @media (min-width: 860px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-      .span-2{ grid-column: span 2; }
-    }
-
-    .card{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(15,26,48,.60);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
-    }
-
-    h2{
-      margin: 0 0 10px;
-      font-size: 1.15rem;
       letter-spacing: .2px;
     }
 
-    p{ margin: 0 0 12px; color: var(--text); }
-    .muted{ color: var(--muted); }
-
-    ul{
-      margin: 10px 0 12px 20px;
-      padding: 0;
-      color: var(--text);
-    }
-    li{ margin: 6px 0; }
-
-    .kicker{
-      font-size: .9rem;
-      color: var(--muted);
-      margin-top: -4px;
-    }
-
-    .callout{
-      border: 1px solid rgba(125,211,252,.25);
-      background: linear-gradient(135deg, rgba(125,211,252,.12), rgba(167,139,250,.08));
-      border-radius: var(--radius);
-      padding: 16px 16px 14px;
-    }
-
-    .callout h3{
-      margin: 0 0 8px;
+    .subhead{
+      margin: 0 0 14px;
       font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 74ch;
     }
 
     .cta-row{
@@ -140,19 +172,86 @@
       align-items:center;
       justify-content:center;
       padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(231,237,247,.20);
-      background: rgba(231,237,247,.06);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
       color: var(--text);
-      font-weight: 700;
+      font-weight: 750;
       text-decoration:none;
       cursor: pointer;
+      box-shadow: 0 8px 18px rgba(15,23,42,.06);
+      transition: transform .12s ease, filter .12s ease;
+      white-space: nowrap;
     }
+    .btn:hover{ filter: brightness(1.02); transform: translateY(-1px); text-decoration:none; }
     .btn.primary{
-      border-color: rgba(125,211,252,.45);
-      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.14));
+      border-color: rgba(37,99,235,.25);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
     }
-    .btn:hover{ filter: brightness(1.08); text-decoration:none; }
+    .btn.secondary{
+      background: rgba(37,99,235,.08);
+      border-color: rgba(37,99,235,.18);
+      color: var(--text);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (min-width: 860px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+      .span-2{ grid-column: span 2; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow2);
+      padding: 18px 18px 16px;
+    }
+
+    .card.accent{
+      background: linear-gradient(180deg, rgba(6,182,212,.08), rgba(255,255,255,1));
+      border-color: rgba(6,182,212,.20);
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 1.12rem;
+      letter-spacing: .2px;
+    }
+
+    p{ margin: 0 0 12px; }
+    .muted{ color: var(--muted); }
+
+    ul{
+      margin: 10px 0 12px 18px;
+      padding: 0;
+    }
+    li{ margin: 6px 0; }
+    li::marker{ color: var(--accent); }
+
+    .callout{
+      border: 1px solid rgba(37,99,235,.18);
+      background: var(--surface2);
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+    }
+
+    .callout h3{
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .kicker{
+      font-size: .92rem;
+      color: var(--muted);
+      margin-top: -4px;
+    }
 
     /* Forms */
     form{
@@ -170,12 +269,17 @@
     input, textarea{
       width: 100%;
       padding: 12px;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid var(--border);
-      background: rgba(15,26,48,.80);
+      background: #fff;
       color: var(--text);
       font-size: 14px;
       outline: none;
+      box-shadow: inset 0 1px 0 rgba(15,23,42,.04);
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(37,99,235,.45);
+      box-shadow: var(--focus);
     }
     textarea{ resize: vertical; min-height: 120px; }
 
@@ -196,20 +300,51 @@
       padding-top: 16px;
       border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: .9rem;
+      font-size: .92rem;
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap: wrap;
     }
   </style>
 </head>
 
 <body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">🛡️</div>
+        <div class="brand-name">
+          <strong>VectorFortress</strong>
+          <span>Federal authorization strategy</span>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#problem">Problem</a>
+        <a href="#what-we-do">What we do</a>
+        <a href="#signature">Engagement</a>
+        <a href="#about">Founder</a>
+        <a class="btn primary" href="#contact">Request a call</a>
+      </nav>
+    </div>
+  </div>
+
   <div class="wrap">
     <header>
-      <div class="badge">🛡️ VectorFortress</div>
-      <h1>Federal Cloud Security &amp; Authorization Strategy</h1>
-      <p class="subhead">
-        We help GovTech companies and federal contractors design clear, modern authorization strategies
-        for cloud-native systems — without unnecessary compliance friction.
-      </p>
+      <div class="hero">
+        <div class="badge"><span class="dot"></span> VectorFortress</div>
+        <h1>Federal Cloud Security &amp; Authorization Strategy</h1>
+        <p class="subhead">
+          We help GovTech companies and federal contractors design clear, modern authorization strategies
+          for cloud-native systems — without unnecessary compliance friction.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Request a Strategy Call</a>
+          <a class="btn secondary" href="#signature">View Signature Engagement</a>
+        </div>
+      </div>
     </header>
 
     <div class="grid">
@@ -253,7 +388,7 @@
         </ul>
       </section>
 
-      <section class="card" id="signature">
+      <section class="card accent" id="signature">
         <h2>Signature Engagement</h2>
         <div class="callout">
           <h3>Federal Authorization Strategy Diagnostic</h3>
@@ -300,8 +435,7 @@
           <a href="https://www.amazon.com/How-Pass-CRISC-Exam-Information/dp/0692170472/ref=sr_1_1?crid=3JVWPD77XOUY5&dib=eyJ2IjoiMSJ9.ETt0nEDUjI4aDVvOqdlidA.75IjwilhglL3Nx2V7a93hepxSCcCU2F8cNHuOFcguh4&dib_tag=se&keywords=Kudeha+Atila&qid=1772061294&s=digital-text&sprefix=kudeha+atila%2Cdigital-text%2C402&sr=1-1"
              target="_blank" rel="noopener">
             How to Pass the CRISC Exam
-          </a>,
-          a resource for IT professionals advancing in enterprise risk and control strategy.
+          </a>.
         </p>
 
         <p class="muted">
@@ -380,6 +514,7 @@
 
     <footer>
       <span>&copy; <span id="year"></span> VectorFortress. All rights reserved.</span>
+      <span>Modern security strategy, made simple.</span>
     </footer>
   </div>
 
