@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -68,25 +69,36 @@
       display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
     .logo {
-      display: flex; align-items: center; gap: 12px;
-      font-family: var(--font-h); font-weight: 800; font-size: 1.1rem;
-      color: var(--white); letter-spacing: -.2px; text-decoration: none;
+      display: flex; align-items: center; gap: 13px;
+      color: var(--white); text-decoration: none;
     }
     .logo:hover { text-decoration: none; }
-    .logo-icon {
-      width: 52px; height: 52px; border-radius: 16px;
-      background:
-        radial-gradient(circle at 22% 18%, #ffffff 0%, #ffe66d 12%, transparent 24%),
-        linear-gradient(135deg, #ff2d95 0%, #7c3cff 22%, #1a56f0 42%, #00c8ff 63%, #00d68f 82%, #f5a623 100%);
-      display: grid; place-items: center; flex-shrink: 0;
+    .brand-mark {
+      width: 54px; height: 54px; border-radius: 14px;
+      object-fit: cover; object-position: center;
+      flex-shrink: 0;
       box-shadow:
-        0 0 18px rgba(255,45,149,.55),
-        0 0 34px rgba(0,200,255,.55),
-        0 0 54px rgba(0,214,143,.3);
-      border: 2px solid rgba(255,255,255,.35);
+        0 0 18px rgba(143, 231, 198, .32),
+        0 0 30px rgba(72, 191, 235, .28);
+      border: 1px solid rgba(255,255,255,.16);
     }
-    .logo-icon svg { width: 42px; height: 42px; }
-    .logo-sub { font-size: .72rem; font-weight: 400; color: rgba(255,255,255,.45); display: block; font-family: var(--font-b); margin-top: 1px; }
+    .brand-text {
+      display: flex; flex-direction: column; line-height: 1.05;
+    }
+    .brand-name {
+      font-family: var(--font-h); font-weight: 800; font-size: 1.08rem;
+      color: var(--white); letter-spacing: 1.8px; text-transform: uppercase;
+    }
+    .logo-sub {
+      font-size: .7rem; font-weight: 700; color: rgba(143,231,198,.82);
+      display: block; font-family: var(--font-b); margin-top: 5px;
+      letter-spacing: 1.6px; text-transform: uppercase;
+    }
+    @media (max-width: 560px) {
+      .brand-mark { width: 46px; height: 46px; }
+      .brand-name { font-size: .88rem; letter-spacing: 1px; }
+      .logo-sub { font-size: .58rem; letter-spacing: .8px; }
+    }
     nav { display: none; gap: 2px; align-items: center; }
     @media (min-width: 860px) { nav { display: flex; } }
     nav a {
@@ -544,14 +556,16 @@
     }
     .footer-brand {
       display: flex; align-items: center; gap: 12px;
-      font-family: var(--font-h); font-weight: 800; font-size: .97rem; color: #fff;
+      color: #fff;
     }
-    .footer-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      display: grid; place-items: center;
+    .footer-logo {
+      width: 230px; max-width: 100%;
+      height: auto; display: block; object-fit: contain;
+      filter: drop-shadow(0 0 16px rgba(0,200,255,.22));
     }
-    .footer-icon svg { width: 28px; height: 28px; }
+    @media (max-width: 560px) {
+      .footer-logo { width: 190px; }
+    }
     footer p { font-size: .83rem; color: rgba(255,255,255,.35); }
   </style>
 </head>
@@ -560,39 +574,12 @@
 <!-- NAV -->
 <div class="nav">
   <div class="nav-inner">
-    <a class="logo" href="#top">
-      <div class="logo-icon">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="vfCloud" x1="8" y1="8" x2="32" y2="24">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="45%" stop-color="#dff7ff"/>
-              <stop offset="100%" stop-color="#b8ecff"/>
-            </linearGradient>
-            <linearGradient id="vfScreen" x1="11" y1="22" x2="29" y2="34">
-              <stop offset="0%" stop-color="#ff2d95"/>
-              <stop offset="28%" stop-color="#7c3cff"/>
-              <stop offset="58%" stop-color="#00c8ff"/>
-              <stop offset="100%" stop-color="#00d68f"/>
-            </linearGradient>
-            <linearGradient id="vfLock" x1="21" y1="24" x2="28" y2="31">
-              <stop offset="0%" stop-color="#ffe66d"/>
-              <stop offset="55%" stop-color="#f5a623"/>
-              <stop offset="100%" stop-color="#ff6b00"/>
-            </linearGradient>
-          </defs>
-          <path d="M28.5 16.5C28.5 13.46 26.04 11 23 11C21.24 11 19.67 11.82 18.64 13.1C18.1 12.72 17.45 12.5 16.75 12.5C14.96 12.5 13.5 13.96 13.5 15.75C13.5 15.84 13.5 15.93 13.51 16.02C12.04 16.28 11 17.57 11 19.1C11 20.7 12.3 22 13.9 22H28.1C29.7 22 31 20.7 31 19.1C31 17.7 30 16.5 28.5 16.5Z" fill="url(#vfCloud)" stroke="#ffffff" stroke-width="1.25" stroke-linejoin="round"/>
-          <rect x="11" y="22" width="18" height="11" rx="1.6" fill="url(#vfScreen)" stroke="#ffffff" stroke-width="1.15"/>
-          <rect x="13" y="24" width="14" height="7" rx=".9" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.65)" stroke-width=".8"/>
-          <path d="M20 33V36" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M16.5 36H23.5" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M22.5 26.8V25.9C22.5 24.85 23.35 24 24.4 24C25.45 24 26.3 24.85 26.3 25.9V26.8" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/>
-          <rect x="21.6" y="26.8" width="5.4" height="3.8" rx=".9" fill="url(#vfLock)" stroke="#ffffff" stroke-width="1"/>
-          <circle cx="24.3" cy="28.4" r=".65" fill="#050d1f"/>
-          <path d="M24.3 29.1V30" stroke="#050d1f" stroke-width=".9" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div>VectorFortress<span class="logo-sub">Security Compliance Consulting</span></div>
+    <a class="logo" href="#top" aria-label="VectorFortress home">
+      <img class="brand-mark" src="vectorfortress-logo-mark.png" alt="VectorFortress logo mark" />
+      <span class="brand-text">
+        <span class="brand-name">VectorFortress</span>
+        <span class="logo-sub">Security Compliance Consulting</span>
+      </span>
     </a>
     <nav aria-label="Primary">
       <a href="#challenges">Challenges</a>
@@ -882,20 +869,7 @@
 <footer>
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      <div class="footer-icon">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28.5 16.5C28.5 13.46 26.04 11 23 11C21.24 11 19.67 11.82 18.64 13.1C18.1 12.72 17.45 12.5 16.75 12.5C14.96 12.5 13.5 13.96 13.5 15.75C13.5 15.84 13.5 15.93 13.51 16.02C12.04 16.28 11 17.57 11 19.1C11 20.7 12.3 22 13.9 22H28.1C29.7 22 31 20.7 31 19.1C31 17.7 30 16.5 28.5 16.5Z" fill="white" fill-opacity=".9" stroke="white" stroke-width="1.2" stroke-linejoin="round"/>
-          <rect x="11" y="22" width="18" height="11" rx="1.5" fill="white" fill-opacity=".75" stroke="white" stroke-width="1.2"/>
-          <rect x="13" y="24" width="14" height="7" rx=".8" fill="white" fill-opacity=".2" stroke="white" stroke-width=".9"/>
-          <path d="M20 33V36" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M16.5 36H23.5" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M22.5 26.8V25.9C22.5 24.85 23.35 24 24.4 24C25.45 24 26.3 24.85 26.3 25.9V26.8" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
-          <rect x="21.6" y="26.8" width="5.4" height="3.8" rx=".9" fill="white" fill-opacity=".95" stroke="white" stroke-width="1.2"/>
-          <circle cx="24.3" cy="28.4" r=".75" fill="#050d1f"/>
-          <path d="M24.3 29.1V30.2" stroke="#050d1f" stroke-width="1" stroke-linecap="round"/>
-        </svg>
-      </div>
-      VectorFortress
+      <img class="footer-logo" src="vectorfortress-logo-full.png" alt="VectorFortress Security Compliance Consulting logo" />
     </div>
     <p>&copy; <span id="yr"></span> VectorFortress. Modern compliance strategy. Faster outcomes.</p>
   </div>
