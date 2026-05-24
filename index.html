@@ -535,9 +535,9 @@
       overflow: hidden;
       padding: 30px 26px;
       border-radius: var(--r-lg);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border: 1px solid rgba(255,255,255,.13);
-      box-shadow: 0 18px 50px rgba(0,0,0,.2), 0 0 28px rgba(0,200,255,.08);
+      border: 1px solid rgba(26,86,240,.16);
+      background: #ffffff;
+      box-shadow: 0 18px 45px rgba(10,17,40,.10), 0 0 24px rgba(0,200,255,.08);
     }
 
     .ia-card::before {
@@ -549,17 +549,27 @@
     }
 
     .ia-card h3 {
-      color: #fff;
+      color: var(--ink);
       font-size: 1.04rem;
       font-weight: 800;
       margin-bottom: 10px;
     }
 
     .ia-card p {
-      color: rgba(255,255,255,.76);
+      color: var(--ink-2);
       font-size: .93rem;
+      font-weight: 400;
       line-height: 1.68;
     }
+
+    .dark .ia-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.055));
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 18px 50px rgba(0,0,0,.22), 0 0 30px rgba(0,200,255,.10);
+    }
+
+    .dark .ia-card h3 { color: #ffffff; }
+    .dark .ia-card p { color: rgba(255,255,255,.82); }
 
     .ia-pill-row {
       display: flex;
@@ -571,11 +581,27 @@
     .ia-pill {
       padding: 8px 13px;
       border-radius: 999px;
-      background: rgba(0,200,255,.1);
-      border: 1px solid rgba(0,200,255,.25);
-      color: #e8fbff;
+      background: #e8f7ff;
+      border: 1px solid #7bdcff;
+      color: #0a4f7a;
       font-size: .82rem;
-      font-weight: 700;
+      font-weight: 800;
+    }
+
+    .dark .ia-pill {
+      background: rgba(0,200,255,.13);
+      border: 1px solid rgba(0,200,255,.32);
+      color: #e8fbff;
+    }
+
+    .ia-pill:hover {
+      background: #d6f2ff;
+      color: #063b5c;
+    }
+
+    .dark .ia-pill:hover {
+      background: rgba(0,229,255,.22);
+      color: #ffffff;
     }
 
     .eng-card {
@@ -1325,7 +1351,7 @@
                 <rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="rgba(255,255,255,.72)" stroke-width="1.4"/>
                 <path d="M1.5 5.5l6.5 4 6.5-4" stroke="rgba(255,255,255,.72)" stroke-width="1.4" stroke-linecap="round"/>
               </svg>
-              Contact Us - Email: vectorfortress@vectorfortress.net
+              <strong>Email Us:</strong> vectorfortress@vectorfortress.net
             </a>
           </div>
 
