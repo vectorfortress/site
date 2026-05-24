@@ -8,7 +8,7 @@
   <meta name="description" content="VectorFortress helps GovTech companies, federal contractors, and state/local agencies accelerate security compliance — FedRAMP, NIST 800-53, ATO — without the documentation chaos." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -24,12 +24,12 @@
       --off:    #f0f4ff;
       --ink:    #0a1128;
       --ink-2:  #2c3a5c;
-      --ink-3:  #5a6a90;
-      --ink-4:  #94a3c0;
+      --ink-3:  #475678;
+      --ink-4:  #667899;
       --border: rgba(26,86,240,.12);
       --max: 1080px;
-      --font-h: 'Syne', 'Inter', system-ui, -apple-system, sans-serif;
-      --font-b: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-h: 'Lexend', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-b: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       --r: 12px;
       --r-lg: 20px;
       --r-xl: 28px;
@@ -41,19 +41,34 @@
       font-family: var(--font-b);
       color: var(--ink);
       background: var(--white);
-      line-height: 1.65;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
     h1, h2, h3, h4 {
       font-family: var(--font-h);
-      letter-spacing: -.35px;
+      letter-spacing: -0.02em;
     }
     p, span, a, li, button, input, textarea, select {
       font-family: var(--font-b);
     }
     a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    a:focus-visible,
+    button:focus-visible,
+    iframe:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
 
     /* NAV */
@@ -91,7 +106,7 @@
     }
     .logo-sub {
       font-size: .7rem; font-weight: 700; color: rgba(143,231,198,.82);
-      display: block; font-family: var(--font-b); margin-top: 5px;
+      display: block; font-family: var(--font-h); margin-top: 5px;
       letter-spacing: 1.6px; text-transform: uppercase;
     }
     @media (max-width: 560px) {
@@ -103,7 +118,7 @@
     @media (min-width: 860px) { nav { display: flex; } }
     nav a {
       padding: 7px 13px; border-radius: 8px;
-      font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.6);
+      font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.76);
       transition: background .15s, color .15s;
     }
     nav a:hover { background: rgba(255,255,255,.08); color: #fff; text-decoration: none; }
@@ -134,8 +149,8 @@
       content: '';
       position: absolute; inset: 0; pointer-events: none; opacity: .07;
       background-image:
-        linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.76) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.76) 1px, transparent 1px);
       background-size: 60px 60px;
     }
     .hero-inner { position: relative; z-index: 2; }
@@ -183,13 +198,13 @@
     .hero h1 {
       font-family: var(--font-h); font-size: clamp(2.6rem, 5vw, 4rem);
       font-weight: 800; color: #fff; line-height: 1.08;
-      letter-spacing: -.5px; margin-bottom: 24px;
+      letter-spacing: -0.03em; margin-bottom: 24px;
     }
     .hl { color: var(--cyan); }
     .hl2 { color: var(--gold); }
 
     .hero-lead {
-      font-size: 1.08rem; color: rgba(255,255,255,.62);
+      font-size: 1.08rem; color: rgba(255,255,255,.78);
       max-width: 50ch; line-height: 1.75; margin-bottom: 0;
     }
     .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -246,7 +261,7 @@
       max-width: 100%;
     }
     .stat span {
-      font-size: .8rem; color: rgba(255,255,255,.62); margin-top: 6px;
+      font-size: .8rem; color: rgba(255,255,255,.78); margin-top: 6px;
       display: block; line-height: 1.4; overflow-wrap: break-word;
     }
     @media (max-width: 420px) {
@@ -278,7 +293,7 @@
     .section-title {
       font-family: var(--font-h); font-size: clamp(1.8rem, 3vw, 2.5rem);
       font-weight: 800; color: var(--ink); line-height: 1.12;
-      letter-spacing: -.3px; margin-bottom: 14px;
+      letter-spacing: -0.02em; margin-bottom: 14px;
     }
     .section-lead { font-size: 1rem; color: var(--ink-3); max-width: 52ch; line-height: 1.7; }
 
@@ -317,7 +332,7 @@
     }
     .approach .section-eyebrow { color: var(--cyan); background: rgba(0,200,255,.08); border-color: rgba(0,200,255,.2); }
     .approach .section-title { color: #fff; }
-    .approach .section-lead { color: rgba(255,255,255,.5); }
+    .approach .section-lead { color: rgba(255,255,255,.72); }
 
     .approach-inner {
       display: grid; grid-template-columns: 1fr;
@@ -339,7 +354,7 @@
       font-family: var(--font-h); font-weight: 800; font-size: .9rem; color: var(--cyan);
     }
     .step-body h3 { font-family: var(--font-h); font-size: 1.02rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
-    .step-body p { font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.65; }
+    .step-body p { font-size: .88rem; color: rgba(255,255,255,.72); line-height: 1.65; }
 
     .approach-right { display: flex; flex-direction: column; gap: 20px; }
 
@@ -358,14 +373,14 @@
       background: var(--green); display: grid; place-items: center; margin-top: 1px;
     }
     .check-icon svg { width: 10px; height: 10px; }
-    .outcome-row span { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.55; }
+    .outcome-row span { font-size: .9rem; color: rgba(255,255,255,.82); line-height: 1.55; }
 
     .who-box {
       background: rgba(255,255,255,.04);
       border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--r-lg); padding: 26px;
     }
-    .who-box h3 { font-family: var(--font-h); font-size: .9rem; font-weight: 700; color: rgba(255,255,255,.7); margin-bottom: 16px; }
+    .who-box h3 { font-family: var(--font-h); font-size: .9rem; font-weight: 700; color: rgba(255,255,255,.82); margin-bottom: 16px; }
     .who-tags { display: flex; flex-wrap: wrap; gap: 9px; }
     .who-tag {
       padding: 6px 14px; border-radius: 999px;
@@ -401,7 +416,7 @@
       font-family: var(--font-h); font-size: 1.5rem; font-weight: 800;
       color: #fff; margin-bottom: 10px; position: relative; z-index: 2;
     }
-    .eng-head p { color: rgba(255,255,255,.58); font-size: .97rem; max-width: 62ch; position: relative; z-index: 2; }
+    .eng-head p { color: rgba(255,255,255,.74); font-size: .97rem; max-width: 62ch; position: relative; z-index: 2; }
 
     .eng-body { display: grid; grid-template-columns: 1fr; }
     @media (min-width: 760px) { .eng-body { grid-template-columns: 1fr 1fr; } }
@@ -460,7 +475,7 @@
       margin-bottom: 16px; box-shadow: 0 0 20px rgba(0,200,255,.35);
     }
     .cred-name { font-family: var(--font-h); font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
-    .cred-role { font-size: .83rem; color: rgba(255,255,255,.5); }
+    .cred-role { font-size: .83rem; color: rgba(255,255,255,.72); }
     .cred-body { padding: 28px 32px; }
     .cred-section {
       font-size: .72rem; font-weight: 700; text-transform: uppercase;
@@ -505,7 +520,7 @@
     }
     .contact .section-eyebrow { color: var(--cyan); background: rgba(0,200,255,.08); border-color: rgba(0,200,255,.2); }
     .contact .section-title { color: #fff; }
-    .contact .section-lead { color: rgba(255,255,255,.5); }
+    .contact .section-lead { color: rgba(255,255,255,.72); }
 
     .contact-grid {
       display: grid; grid-template-columns: 1fr;
@@ -513,7 +528,7 @@
     }
     @media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1.3fr; align-items: start; } }
 
-    .contact-left p { font-size: .97rem; color: rgba(255,255,255,.55); margin-bottom: 36px; }
+    .contact-left p { font-size: .97rem; color: rgba(255,255,255,.74); margin-bottom: 36px; }
     .steps-list { display: flex; flex-direction: column; gap: 24px; }
     .step-row { display: flex; align-items: flex-start; gap: 16px; }
     .step-circle {
@@ -523,7 +538,7 @@
       font-family: var(--font-h); font-size: .8rem; font-weight: 800; color: var(--cyan);
     }
     .step-row strong { display: block; font-size: .93rem; color: #fff; margin-bottom: 2px; }
-    .step-row span { font-size: .84rem; color: rgba(255,255,255,.45); }
+    .step-row span { font-size: .84rem; color: rgba(255,255,255,.70); }
     .contact-email-link {
       display: inline-flex; align-items: center; gap: 10px;
       margin-top: 32px; padding: 13px 20px;
@@ -566,7 +581,7 @@
     @media (max-width: 560px) {
       .footer-logo { width: 190px; }
     }
-    footer p { font-size: .83rem; color: rgba(255,255,255,.35); }
+    footer p { font-size: .83rem; color: rgba(255,255,255,.66); }
   </style>
 </head>
 <body>
@@ -853,7 +868,7 @@
           </div>
         </div>
         <a class="contact-email-link" href="mailto:nc_aistg@outlook.com">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="rgba(255,255,255,.5)" stroke-width="1.4"/><path d="M1.5 5.5l6.5 4 6.5-4" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="rgba(255,255,255,.72)" stroke-width="1.4"/><path d="M1.5 5.5l6.5 4 6.5-4" stroke="rgba(255,255,255,.72)" stroke-width="1.4" stroke-linecap="round"/></svg>
           nc_aistg@outlook.com
         </a>
       </div>
