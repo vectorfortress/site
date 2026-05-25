@@ -752,7 +752,8 @@
       margin-top: 56px;
     }
 
-    @media (min-width: 920px) { .testimonial-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 760px) { .testimonial-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1180px) { .testimonial-grid { grid-template-columns: repeat(4, 1fr); } }
 
     .testimonial-card {
       position: relative;
@@ -1094,6 +1095,123 @@
       .hero-card-top, .hero-card-body, .eng-head, .eng-col, .eng-foot { padding: 26px; }
       .footer-logo { width: 190px; }
     }
+
+    .proposal-advisory {
+      background:
+        radial-gradient(circle at 12% 15%, rgba(0, 200, 255, .18), transparent 34%),
+        radial-gradient(circle at 90% 35%, rgba(245, 166, 35, .14), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f2f8ff 100%);
+    }
+
+    .proposal-card {
+      margin-top: 52px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 36px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(26,86,240,.14);
+      box-shadow: 0 20px 60px rgba(10,17,40,.10);
+    }
+
+    @media (min-width: 900px) {
+      .proposal-card {
+        grid-template-columns: 1.1fr .9fr;
+        align-items: start;
+      }
+    }
+
+    .proposal-card h3 {
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .proposal-card p {
+      color: var(--ink-2);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: .98rem;
+    }
+
+    .proposal-eyebrow {
+      display: inline-flex;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(0,200,255,.12);
+      color: #075f86;
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .45px;
+      margin-bottom: 18px;
+    }
+
+    .proposal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .proposal-tags span {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(26,86,240,.14);
+      color: #17335c;
+      font-size: .8rem;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(10,17,40,.04);
+    }
+
+    .proposal-checklist {
+      background: linear-gradient(135deg, rgba(5,13,31,.96), rgba(11,26,56,.96));
+      color: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+
+    .proposal-checklist h4 {
+      font-size: 1rem;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .proposal-checklist ul {
+      list-style: none;
+      display: grid;
+      gap: 13px;
+    }
+
+    .proposal-checklist li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.82);
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    .proposal-checklist li::before {
+      content: "✓";
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #052314;
+      font-weight: 900;
+      font-size: .82rem;
+      margin-top: 1px;
+    }
+
   </style>
 </head>
 
@@ -1114,6 +1232,7 @@
         <a href="#assurance">IA</a>
         <a href="#ai-governance">AI</a>
         <a href="#engagement">Engagement</a>
+        <a href="#proposal-review">Proposals</a>
         <a href="#testimonials">Results</a>
         <a href="#about">About</a>
         <a class="nav-cta" href="#contact">Contact Us</a>
@@ -1398,6 +1517,45 @@
     </section>
 
 
+    <section class="proposal-advisory" id="proposal-review">
+      <div class="wrap">
+        <span class="section-eyebrow">Proposal Advisory</span>
+        <h2 class="section-title">Helping small businesses strengthen government proposals before submission.</h2>
+        <p class="section-lead">VectorFortress reviews cybersecurity, Information Assurance, cloud security, compliance, and AI governance proposal content so small companies can compete with more confidence in federal, state, and regulated opportunities.</p>
+
+        <div class="proposal-card">
+          <div>
+            <div class="proposal-eyebrow">Pre-award compliance support</div>
+            <h3>Turn security requirements into stronger, more credible proposal responses.</h3>
+            <p>Many small businesses have the technical capability to support government work, but their proposal responses do not always communicate security, compliance, governance, or risk management maturity clearly enough.</p>
+            <p>VectorFortress helps review and strengthen proposal sections tied to NIST RMF, FedRAMP, FISMA, CMMC, Information Assurance, AI governance, cloud security, evidence readiness, and control ownership.</p>
+
+            <div class="proposal-tags" aria-label="Proposal review focus areas">
+              <span>Federal Proposals</span>
+              <span>Security Narratives</span>
+              <span>Compliance Alignment</span>
+              <span>NIST &amp; FedRAMP</span>
+              <span>CMMC Readiness</span>
+              <span>AI Governance</span>
+            </div>
+          </div>
+
+          <div class="proposal-checklist">
+            <h4>What we help improve</h4>
+            <ul>
+              <li>Cybersecurity and compliance response language</li>
+              <li>Control ownership and responsibility narratives</li>
+              <li>Information Assurance and evidence readiness claims</li>
+              <li>Cloud security, FedRAMP, CMMC, and NIST alignment</li>
+              <li>AI governance and data protection positioning</li>
+              <li>Executive-ready risk and governance messaging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section class="testimonials" id="testimonials">
       <div class="wrap">
         <span class="section-eyebrow">Client Success</span>
@@ -1421,6 +1579,12 @@
             <div class="quote-icon" aria-hidden="true">“</div>
             <p class="testimonial-text">VectorFortress helped us modernize our security and AI governance approach without disrupting operations. Their recommendations were practical, scalable, and aligned with executive priorities.</p>
             <div class="testimonial-author">— Technology Executive, Regulated Industry</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote-icon" aria-hidden="true">“</div>
+            <p class="testimonial-text">VectorFortress helped us strengthen the cybersecurity and compliance sections of a federal proposal and positioned our team more competitively. Their ability to bridge technical security requirements with business strategy was extremely valuable.</p>
+            <div class="testimonial-author">— Founder, Small Government Contractor</div>
           </article>
         </div>
       </div>
