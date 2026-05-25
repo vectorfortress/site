@@ -141,11 +141,29 @@
     }
 
     .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       margin-left: 8px;
-      padding: 10px 20px !important;
+      min-width: 126px;
+      padding: 11px 20px !important;
+      border-radius: 14px !important;
       background: linear-gradient(135deg, var(--blue), var(--cyan), var(--green)) !important;
-      color: #fff !important;
-      box-shadow: 0 0 22px rgba(0,200,255,.35);
+      color: #ffffff !important;
+      font-size: .92rem;
+      font-weight: 800 !important;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      box-shadow: 0 10px 30px rgba(0,200,255,.34);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 16px 40px rgba(0,200,255,.46);
+      text-decoration: none;
     }
 
     .hero {
