@@ -735,6 +735,74 @@
       box-shadow: 0 14px 44px rgba(0,200,255,.38);
     }
 
+
+    .testimonials {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(0,200,255,.16), transparent 32%),
+        radial-gradient(circle at 86% 4%, rgba(245,166,35,.14), transparent 30%),
+        linear-gradient(180deg, #f7fbff 0%, #eef7ff 100%);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    @media (min-width: 920px) { .testimonial-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .testimonial-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      padding: 34px 30px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(26,86,240,.12);
+      box-shadow: 0 12px 42px rgba(10,17,40,.08);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan), var(--green), var(--gold));
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,200,255,.34);
+      box-shadow: 0 20px 58px rgba(0,200,255,.15);
+    }
+
+    .quote-icon {
+      margin-bottom: 14px;
+      color: rgba(0,200,255,.28);
+      font-family: Georgia, serif;
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      margin-bottom: 24px;
+      color: #233252;
+      font-size: .98rem;
+      font-weight: 500;
+      line-height: 1.82;
+    }
+
+    .testimonial-author {
+      color: #0a1128;
+      font-size: .84rem;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1046,6 +1114,7 @@
         <a href="#assurance">IA</a>
         <a href="#ai-governance">AI</a>
         <a href="#engagement">Engagement</a>
+        <a href="#testimonials">Results</a>
         <a href="#about">About</a>
         <a class="nav-cta" href="#contact">Contact Us</a>
       </nav>
@@ -1324,6 +1393,35 @@
             <p>Less rework. Better evidence. Stronger confidence before the assessment.</p>
             <a class="btn" href="#contact">Start the conversation →</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="testimonials" id="testimonials">
+      <div class="wrap">
+        <span class="section-eyebrow">Client Success</span>
+        <h2 class="section-title">Trusted by teams navigating complex security and compliance challenges.</h2>
+        <p class="section-lead">Organizations rely on VectorFortress to accelerate readiness, strengthen governance, and modernize security programs with clarity and confidence.</p>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="quote-icon" aria-hidden="true">“</div>
+            <p class="testimonial-text">VectorFortress helped us cut our FedRAMP readiness timeline nearly in half. Their gap analysis alone saved our team weeks of back-and-forth with assessors and gave leadership clear visibility into our compliance posture.</p>
+            <div class="testimonial-author">— Director of IT Security, Federal Contractor</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote-icon" aria-hidden="true">“</div>
+            <p class="testimonial-text">What impressed us most was the balance between strategic leadership and technical depth. The engagement helped our organization mature its governance and risk posture significantly faster than expected.</p>
+            <div class="testimonial-author">— Director of Governance, Risk &amp; Compliance</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote-icon" aria-hidden="true">“</div>
+            <p class="testimonial-text">VectorFortress helped us modernize our security and AI governance approach without disrupting operations. Their recommendations were practical, scalable, and aligned with executive priorities.</p>
+            <div class="testimonial-author">— Technology Executive, Regulated Industry</div>
+          </article>
         </div>
       </div>
     </section>
