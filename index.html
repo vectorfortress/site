@@ -907,7 +907,89 @@
     }
 
     .form-head p { color: #fff; font-family: var(--font-h); font-weight: 800; }
-    .form-shell iframe { display: block; width: 100%; border: 0; }
+    /* Contact form */
+    .vf-contact-form {
+      padding: 34px;
+      background: #fff;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 760px) {
+      .form-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: .86rem;
+      font-weight: 800;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(26,86,240,.18);
+      background: #fff;
+      color: var(--ink);
+      font-size: .96rem;
+      line-height: 1.4;
+      box-shadow: inset 0 1px 0 rgba(10,17,40,.03);
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #6a7898; opacity: 1; }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(26,86,240,.14);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 4px;
+      font-size: 1rem;
+    }
+
+    .form-note {
+      margin-top: 16px;
+      text-align: center;
+      color: var(--ink-3);
+      font-size: .84rem;
+    }
+
+    .honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
 
     footer {
       padding: 30px 0;
@@ -1357,15 +1439,20 @@
 
           <div class="form-shell">
             <div class="form-head"><p>Contact VectorFortress</p></div>
-            <form class="vf-contact-form" action="mailto:vectorfortress@vectorfortress.net" method="post" enctype="text/plain">
+            <form class="vf-contact-form" action="https://formsubmit.co/vectorfortress@vectorfortress.net" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New VectorFortress Contact Request">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://vectorfortress.net/#contact">
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honeypot" aria-hidden="true">
               <div class="form-grid">
                 <div class="form-group">
                   <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your full name" required>
+                  <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name">
                 </div>
                 <div class="form-group">
                   <label for="email">Work Email</label>
-                  <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                  <input type="text" id="email" name="email" placeholder="you@company.com" inputmode="email" autocomplete="email">
                 </div>
               </div>
 
@@ -1394,11 +1481,11 @@
 
               <div class="form-group">
                 <label for="message">How can we help?</label>
-                <textarea id="message" name="message" placeholder="Tell us about your compliance, security, information assurance, or AI governance challenge..." required></textarea>
+                <textarea id="message" name="message" placeholder="Tell us about your compliance, security, information assurance, or AI governance challenge..."></textarea>
               </div>
 
               <button type="submit" class="btn btn-glow form-submit-btn">Contact Us</button>
-              <p class="form-note">You can also email us directly at vectorfortress@vectorfortress.net. We typically respond within one business day.</p>
+              <p class="form-note">Submissions are delivered to vectorfortress@vectorfortress.net. You can also email us directly.</p>
             </form>
           </div>
         </div>
