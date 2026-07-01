@@ -538,7 +538,6 @@
       font-weight: 700;
     }
 
-
     .ia-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -743,6 +742,8 @@
       color: #fff;
       font-weight: 700;
       text-decoration: none;
+      border: none;
+      cursor: pointer;
       box-shadow: 0 10px 30px rgba(0,200,255,.28);
       transition: transform .16s ease, box-shadow .16s ease;
     }
@@ -752,7 +753,6 @@
       text-decoration: none;
       box-shadow: 0 14px 44px rgba(0,200,255,.38);
     }
-
 
     .testimonials {
       position: relative;
@@ -994,6 +994,7 @@
     }
 
     .form-head p { color: #fff; font-family: var(--font-h); font-weight: 800; }
+
     /* Contact form */
     .vf-contact-form {
       padding: 34px;
@@ -1035,6 +1036,7 @@
       color: var(--ink);
       font-size: .96rem;
       line-height: 1.4;
+      font-family: var(--font-b);
       box-shadow: inset 0 1px 0 rgba(10,17,40,.03);
       transition: border-color .18s ease, box-shadow .18s ease;
     }
@@ -1229,7 +1231,6 @@
       font-size: .82rem;
       margin-top: 1px;
     }
-
   </style>
 </head>
 
@@ -1582,25 +1583,25 @@
 
         <div class="testimonial-grid">
           <article class="testimonial-card">
-            <div class="quote-icon" aria-hidden="true">“</div>
+            <div class="quote-icon" aria-hidden="true">&ldquo;</div>
             <p class="testimonial-text">VectorFortress helped us cut our FedRAMP readiness timeline nearly in half. Their gap analysis alone saved our team weeks of back-and-forth with assessors and gave leadership clear visibility into our compliance posture.</p>
             <div class="testimonial-author">— Director of IT Security, Federal Contractor</div>
           </article>
 
           <article class="testimonial-card">
-            <div class="quote-icon" aria-hidden="true">“</div>
+            <div class="quote-icon" aria-hidden="true">&ldquo;</div>
             <p class="testimonial-text">What impressed us most was the balance between strategic leadership and technical depth. The engagement helped our organization mature its governance and risk posture significantly faster than expected.</p>
             <div class="testimonial-author">— Director of Governance, Risk &amp; Compliance</div>
           </article>
 
           <article class="testimonial-card">
-            <div class="quote-icon" aria-hidden="true">“</div>
+            <div class="quote-icon" aria-hidden="true">&ldquo;</div>
             <p class="testimonial-text">VectorFortress helped us modernize our security and AI governance approach without disrupting operations. Their recommendations were practical, scalable, and aligned with executive priorities.</p>
             <div class="testimonial-author">— Technology Executive, Regulated Industry</div>
           </article>
 
           <article class="testimonial-card">
-            <div class="quote-icon" aria-hidden="true">“</div>
+            <div class="quote-icon" aria-hidden="true">&ldquo;</div>
             <p class="testimonial-text">VectorFortress helped us strengthen the cybersecurity and compliance sections of a federal proposal and positioned our team more competitively. Their ability to bridge technical security requirements with business strategy was extremely valuable.</p>
             <div class="testimonial-author">— Founder, Small Government Contractor</div>
           </article>
@@ -1616,9 +1617,9 @@
         <div class="about-grid">
           <aside class="cred-card">
             <div class="cred-top">
-              <div class="cred-avatar">KA</div>
-              <div class="cred-name">VectorFortress Leadership</div>
-              <div class="cred-role">Founder &amp; Principal Advisors</div>
+              <div class="cred-avatar">VF</div>
+              <div class="cred-name">Principal Advisor</div>
+              <div class="cred-role">Founder-led · Practitioner-driven</div>
             </div>
 
             <div class="cred-body">
@@ -1649,7 +1650,7 @@
 
           <div class="about-content">
             <p>VectorFortress was created to help organizations move beyond checkbox compliance and build security programs that are clear, defensible, and useful to the mission.</p>
-            <p>Led by VectorFortress Leadership, VectorFortress brings hands-on federal cybersecurity, information assurance, cloud compliance, authorization, AI governance, and risk management experience to teams that need practical execution — not more theory.</p>
+            <p>Founded and led by a senior federal security practitioner, VectorFortress brings hands-on federal cybersecurity, information assurance, cloud compliance, authorization, AI governance, and risk management experience to teams that need practical execution — not more theory.</p>
             <p>The goal is simple: help your organization reduce compliance friction, strengthen security posture, and communicate risk with the confidence leaders and assessors expect.</p>
 
             <div class="pub-cards">
@@ -1674,7 +1675,7 @@
                 </div>
                 <div>
                   <div class="pub-label">Published Book · Co-author</div>
-                  <div class="pub-title">Co-author of “How to Pass the CRISC Exam”</div>
+                  <div class="pub-title">Co-author of &ldquo;How to Pass the CRISC Exam&rdquo;</div>
                 </div>
               </a>
             </div>
@@ -1725,6 +1726,7 @@
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_next" value="https://vectorfortress.net/#contact">
               <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honeypot" aria-hidden="true">
+
               <div class="form-grid">
                 <div class="form-group">
                   <label for="name">Full Name</label>
@@ -1732,7 +1734,7 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Work Email</label>
-                  <input type="text" id="email" name="email" placeholder="you@company.com" inputmode="email" autocomplete="email">
+                  <input type="email" id="email" name="email" placeholder="you@company.com" inputmode="email" autocomplete="email">
                 </div>
               </div>
 
@@ -1764,7 +1766,7 @@
                 <textarea id="message" name="message" placeholder="Tell us about your compliance, security, information assurance, or AI governance challenge..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-glow form-submit-btn">Contact Us</button>
+              <button type="submit" class="btn form-submit-btn">Contact Us</button>
               <p class="form-note">Submissions are delivered to vectorfortress@vectorfortress.net. You can also email us directly.</p>
             </form>
           </div>
@@ -1782,9 +1784,6 @@
 
   <script>
     document.getElementById("yr").textContent = new Date().getFullYear();
-      window.addEventListener("resize", setFormHeight);
-      setFormHeight();
-    }
   </script>
 </body>
 </html>
